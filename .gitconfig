@@ -1,0 +1,16 @@
+[user]
+    name = Theo Chatzimichos
+    email = tampakrap@gentoo.org
+    signingkey = 57DC0078
+# KDE Repos
+[url "git://anongit.kde.org/"]
+    insteadOf = kde:
+[url "git@git.kde.org:"]
+    pushInsteadOf = kde:
+# Gentoo Repos
+[url "git://git.overlays.gentoo.org/"]
+    insteadOf = gentoo:
+[url "git@git.overlays.gentoo.org:"]
+    pushInsteadOf = gentoo:
+[color]
+    ui = true
