@@ -16,8 +16,10 @@ fi
 
 
 # Put your fun stuff here.
-export ECHANGELOG_USER="Theo Chatzimichos <tampakrap@gentoo.org>"
-eval `keychain --quiet --eval --agents ssh id_dsa`
+if [ $UID -ne 0 ]; then
+    export ECHANGELOG_USER="Theo Chatzimichos <tampakrap@gentoo.org>"
+    eval `keychain --quiet --eval --agents ssh id_dsa`
+fi
 PAGER=/usr/bin/less
 EDITOR=/usr/bin/vim
 alias isc='osc -A https://api.suse.de/'
