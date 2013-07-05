@@ -1,5 +1,22 @@
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+" Vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" The bundles you install will be listed here
+Bundle 'scrooloose/nerdtree'
+Bundle 'klen/python-mode'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+
+filetype plugin indent on
 
 " Better copy & paste
 set pastetoggle=<F2>
@@ -35,18 +52,15 @@ vnoremap > >gv
 highlight ExtraWhitespace ctermbg=red guibg=red
 highlight BadWhitespace ctermbg=red guibg=red
 match BadWhitespace /\s\+$/
-"au InsertLeave * match ExtraWhitespace /\s\+$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-" set t_Co=256
+set t_Co=256
 " color wombat256mod
 
 " Enable syntax highlighting
-" You need to reload this file for the change to apply
-filetype off
-filetype plugin indent on
 syntax on
 
 " auto ident
@@ -59,7 +73,11 @@ set tw=79
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
 set colorcolumn=80
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=White
+
+" 2 spaces instead of 4 for certain filetypes
+autocmd FileType puppet set sts=2 sw=2 ts=2
+autocmd FileType ruby set sts=2 sw=2 ts=2
 
 " easier formatting of paragraphs
 vmap Q gq
@@ -95,41 +113,34 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Setup Pathogen to manage your plugins
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
-
-" 2 spaces instead of 4 for certain filetypes
-autocmd FileType puppet set sts=2 sw=2 ts=2
-autocmd FileType ruby set sts=2 sw=2 ts=2
-
 " More powerful backspacing
 set backspace=indent,eol,start
 
+" Settings for nerdtree
+map <F2> :NERDTreeToggle<CR>
+
 """ Python IDE setup
 
+" Settings for vim-powerline
+set laststatus=2
+set noshowmode
+let g:PowerlineSymbols = 'fancy'
+
 " Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone git://github.com/kien/ctrlp.vim
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 " Settings for python-mode
-" cd ~/.vim/bundle
-" git clone git://github.com/klen/python-mode
-map <Leader>g :call RopeGotoDefinition()<CR>
-"let ropenvim_enable_shortcuts = 1
 let g:pymode_rope_goto_def_newwin = "vnew"
 let g:pymode_rope_extended_complete = 1
 let g:pymode_breakpoint = 0
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 let g:pymode_lint_mccabe_complexity = 200
+map <Leader>g :call RopeGotoDefinition()<CR>
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
