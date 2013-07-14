@@ -59,6 +59,7 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
 " color wombat256mod
+set background=dark
 
 " Enable syntax highlighting
 syntax on
@@ -73,7 +74,7 @@ set tw=79
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
 set colorcolumn=80
-highlight ColorColumn ctermbg=White
+highlight ColorColumn ctermbg=Grey
 
 " 2 spaces instead of 4 for certain filetypes
 autocmd FileType puppet set sts=2 sw=2 ts=2
@@ -139,6 +140,7 @@ let g:pymode_breakpoint = 0
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 let g:pymode_lint_mccabe_complexity = 200
+let g:pymode_lint_ignore = ""
 map <Leader>g :call RopeGotoDefinition()<CR>
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
