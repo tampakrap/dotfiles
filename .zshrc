@@ -21,6 +21,8 @@ if type -p colordiff &> /dev/null ; then alias diff="colordiff" ; fi
 if type -p colorgcc &> /dev/null ; then alias gcc="colorgcc" ; fi
 if type -p colortail &> /dev/null ; then alias tail="colortail" ; fi
 
+fpath=($HOME/ .zsh/functions $fpath)
+
 autoload -U colors; colors
 autoload -U compinit; compinit
 autoload -U promptinit; promptinit
