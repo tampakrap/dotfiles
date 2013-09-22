@@ -15,6 +15,7 @@ Bundle 'klen/python-mode'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'ssh://hg@bitbucket.org/pentie/vimrepress'
 
 filetype plugin indent on
 
