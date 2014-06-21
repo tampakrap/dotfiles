@@ -1,0 +1,34 @@
+XXkb.image.path: /home/tampakrap/.xxkb
+XXkb.group.base: 1
+XXkb.group.alt: 2
+XXkb.mainwindow.in_tray: true
+XXkb.mainwindow.type: tray
+XXkb.mainwindow.enable: yes
+XXkb.mainwindow.appicon: yes
+#XXkb.mainwindow.border.width: 1
+XXkb.mainwindow.label.enable: no
+XXkb.mainwindow.border.color: white
+XXkb.mainwindow.geometry: 12x12+0+0
+XXkb.mainwindow.image.1: us.xpm
+XXkb.mainwindow.image.2: gr.xpm
+XXkb.mainwindow.image.3: 
+XXkb.mainwindow.image.4: 
+XXkb.mainwindow.delete: no
+
+XXkb.button.enable: no
+
+XXkb.controls.focusout: no
+XXkb.controls.two_state: no
+XXkb.controls.add_when_start: yes
+XXkb.controls.add_when_create: yes
+XXkb.controls.add_when_change: no
+XXkb.controls.button_delete: no
+XXkb.controls.button_delete_and_forget: no
+XXkb.controls.mainwindow_delete: no
+
+XXkb.bell.enable: no
+
+XXkb.ignore.reverse: no
+
+XXkb.mousebutton.1.reverse: no
+XXkb.mousebutton.3.reverse: no
