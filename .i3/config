@@ -153,3 +153,5 @@ bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 
 for_window [class="Firefox"] border none
+
+exec_always "killall xxkb; xxkb"
