@@ -1,7 +1,7 @@
 URxvt.depth: 32
 URxvt.background: [80]#000000
 URxvt.foreground: #FFFFFF
-URxvt.font: xft:Monospace:pixelsize=13,style=regural
+URxvt.font: xft:DejaVuSansMono:pixelsize=13,style=regural
 URxvt.termName: rxvt-unicode
 URxvt.letterSpace: 0
 URxvt.loginShell: true
