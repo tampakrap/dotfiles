@@ -5,3 +5,6 @@
 	ui = true
 [push]
 	default = simple
+[alias]
+	l = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ar) %C(bold blue)<%an>%Creset'
+	lb = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ad) %C(bold blue)%an <%ae>%Creset %n %b'
