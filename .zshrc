@@ -7,6 +7,7 @@ export EDITOR=/usr/bin/vim
 export ZLSCOLORS="${LS_COLORS}"
 
 alias ls="ls --color=auto -h"
+alias lsd="ls -ldG *(-/DN)"
 alias grep="grep --color=auto"
 alias isc='osc -A https://api.suse.de/'
 alias caff='caff -m yes'
@@ -30,6 +31,7 @@ prompt gentoo
 
 setopt completealiases
 setopt prompt_subst
+setopt extendedglob
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
@@ -37,16 +39,32 @@ HISTFILE=${HOME}/.zsh_history
 SAVEHIST=1000
 HISTSIZE=1600
 
-zstyle ':completion:*' menu select=1
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
 autoload -U tetris
 zle -N tetris
 bindkey "^X^T" tetris
 
-PLUGINS=(git hg virtualenv keychain)
-KEYCHAIN_USER=(tampakrap 'Theo Chatzimichos <tampakrap@gentoo.org>')
-WORKSTATIONS=(canibus xzibit rakim virtuoso)
-KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
+function cdl () {
+    cd $*
+    ll
+}
 
-source ${HOME}/.zsh/plugins/load.zsh
+function grt () {
+    while [ ! -d ".git" ]; do
+        cd ..
+    done
+}
+
+if [[ $UID != 0 ]]; then
+    PLUGINS=(git hg jump virtualenv keychain)
+    KEYCHAIN_USER=(tampakrap 'Theo Chatzimichos <tampakrap@gentoo.org>')
+    WORKSTATIONS=(canibus xzibit rakim virtuoso)
+    KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
+
+    source ${HOME}/.zsh/plugins/load.zsh
+fi
