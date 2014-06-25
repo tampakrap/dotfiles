@@ -61,7 +61,7 @@ function grt () {
 }
 
 if [[ $UID != 0 ]]; then
-    PLUGINS=(git hg jump virtualenv keychain)
+    PLUGINS=(git hg jump osc virtualenv keychain)
     KEYCHAIN_USER=(tampakrap 'Theo Chatzimichos <tampakrap@gentoo.org>')
     WORKSTATIONS=(canibus xzibit rakim virtuoso)
     KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
