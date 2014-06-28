@@ -102,5 +102,3 @@ color_active_fg = 2
 #color_active_bg = 0
 color_finished_fg = 6
 #color_finished_bg = 0
-
-# vim: set ft=rtorrent:
