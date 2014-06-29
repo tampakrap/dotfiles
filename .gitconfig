@@ -1,6 +1,7 @@
 [user]
 	name = Theo Chatzimichos
 	email = tampakrap@gmail.com
+	signingkey = 0xC9DA5BE037C3164C
 [color]
 	ui = true
 [push]
