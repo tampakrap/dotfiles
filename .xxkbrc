@@ -11,12 +11,12 @@ XXkb.mainwindow.border.color: white
 XXkb.mainwindow.geometry: 12x12+0+0
 XXkb.mainwindow.image.1: us.xpm
 XXkb.mainwindow.image.2: gr.xpm
-XXkb.mainwindow.image.3: 
+XXkb.mainwindow.image.3: cz.xpm
 XXkb.mainwindow.image.4: 
 XXkb.mainwindow.delete: no
 XXkb.button.enable: no
 XXkb.controls.focusout: no
-XXkb.controls.two_state: no
+XXkb.controls.two_state: yes
 XXkb.controls.add_when_start: yes
 XXkb.controls.add_when_create: yes
 XXkb.controls.add_when_change: no
