@@ -67,7 +67,7 @@ exclude_glob = .osc CVS .svn .git _linkerror *~ *.orig *.bak *.changes.vctmp.* _
 # Set to 0 to obfuscate passwords. It's no real security, just
 # prevents most people from remembering your password if they watch
 # you editing this file.
-plaintext_passwd = 0
+#plaintext_passwd = 1
 # limit the age of requests shown with 'osc req list'.
 # this is a default only, can be overridden by 'osc req list -D NNN'
 # Use 0 for unlimted.
@@ -85,7 +85,7 @@ post_mortem = 1
 # print call traces in case of errors
 traceback = 1
 # use KDE/Gnome/MacOS/Windows keyring for credentials if available
-use_keyring = 0
+use_keyring = 1
 # check for unversioned/removed files before commit
 check_filelist = 1
 # check for pending requests after executing an action (e.g. checkout, update, commit)
@@ -117,7 +117,7 @@ email = tampakrap@opensuse.org
 #http_headers = Host: foofoobar,
 #       User: mumblegack
 # Plain text password
-pass =
+#pass =
 # Force using of keyring for this API
-keyring = 0
+#keyring = 1
 trusted_prj = openSUSE:Factory openSUSE:13.1
