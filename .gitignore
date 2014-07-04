@@ -3,4 +3,5 @@
 .gnupg/private-keys-v1.d
 .gnupg/*.gpg*
 .gnupg/random_seed
-
+.noipupdater/log
+.noipupdater/cache
