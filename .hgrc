@@ -1,2 +1,5 @@
 [extensions]
 prompt = ~/Repos/various/hg-prompt/prompt.py
+
+[ui]
+username = Theo Chatzimichos <tampakrap@gmail.com>
