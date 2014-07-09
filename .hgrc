@@ -1,5 +1,6 @@
 [extensions]
 prompt = ~/Repos/various/hg-prompt/prompt.py
+color =
 
 [ui]
 username = Theo Chatzimichos <tampakrap@gmail.com>
