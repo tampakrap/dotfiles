@@ -21,7 +21,7 @@ build-jobs = "getconf _NPROCESSORS_ONLN"
 #   experimental:
 #     qemu -  qemu VM build
 #     lxc  -  lxc build
-build-type = chroot
+build-type =
 # build-device is the disk-image file to use as root for VM builds
 # e.g. /var/tmp/FILE.root
 #build-device = /var/tmp/FILE.root
