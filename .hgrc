@@ -1,5 +1,5 @@
 [extensions]
-prompt = ~/Repos/various/hg-prompt/prompt.py
+prompt = /usr/bin/hgprompt
 color =
 
 [ui]
