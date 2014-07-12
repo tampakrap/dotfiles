@@ -18,8 +18,14 @@ alias :wq="facepalm"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
 if type -p colordiff &> /dev/null ; then alias diff="colordiff" ; fi
-if type -p colorgcc &> /dev/null ; then alias gcc="colorgcc" ; fi
 if type -p colortail &> /dev/null ; then alias tail="colortail" ; fi
+if type -p colormake &> /dev/null ; then alias make="colormake" ; fi
+if type -p colorgcc &> /dev/null ; then
+    alias gcc="colorgcc"
+    alias g++="colorgcc"
+    alias cc="colorgcc"
+    alias c++="colorgcc"
+fi
 
 fpath=($HOME/.zsh/functions/Prompts $fpath)
 
