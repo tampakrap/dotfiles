@@ -6,4 +6,5 @@ urxvtd-256color -q -o -f
 sh ~/.fehbg &
 xset s 180 180
 pgrep udisks-glue || udisks-glue
+syndaemon -t -k -i 2 -d
 exec /usr/bin/i3
