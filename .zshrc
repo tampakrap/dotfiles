@@ -17,6 +17,7 @@ alias :q="facepalm"
 alias :wq="facepalm"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
+if type -p colorsvn &> /dev/null ; then alias svn="colorsvn" ; fi
 if type -p colordiff &> /dev/null ; then alias diff="colordiff" ; fi
 if type -p colortail &> /dev/null ; then alias tail="colortail" ; fi
 if type -p colormake &> /dev/null ; then alias make="colormake" ; fi
