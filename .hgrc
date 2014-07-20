@@ -1,6 +1,10 @@
 [extensions]
 prompt = /usr/bin/hgprompt
 color =
+pager =
 
 [ui]
 username = Theo Chatzimichos <tampakrap@gmail.com>
+
+[pager]
+pager = LESS='FRX' less
