@@ -52,7 +52,7 @@ build-type =
 # this corresponds to osc build's -x option and can be overridden with that
 # -x '' can also be given on the command line to override this setting, or
 # you can have an empty setting here.
-#extra-pkgs = colormake
+extra-pkgs = colormake
 # build platform is used if the platform argument is omitted to osc build
 build_repository = openSUSE_Factory
 # default project for getpac or bco
@@ -120,4 +120,4 @@ email = tampakrap@opensuse.org
 #pass =
 # Force using of keyring for this API
 #keyring = 1
-trusted_prj = openSUSE:Factory openSUSE:13.1 network:utilities
+trusted_prj = openSUSE:Factory openSUSE:13.1 network:utilities systemsmanagement:puppet
