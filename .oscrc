@@ -120,4 +120,4 @@ email = tampakrap@opensuse.org
 #pass =
 # Force using of keyring for this API
 #keyring = 1
-trusted_prj = openSUSE:Factory openSUSE:13.1 network:utilities systemsmanagement:puppet
+trusted_prj = openSUSE:Factory openSUSE:13.1 network:utilities systemsmanagement:puppet devel:languages:ruby
