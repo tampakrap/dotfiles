@@ -5,3 +5,5 @@
 .gnupg/random_seed
 .noipupdater/log
 .noipupdater/cache
+.weechat/logs/
+.weechat/*.log
