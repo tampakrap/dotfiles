@@ -31,14 +31,11 @@ session = ~/.rtorrent/session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,"load_start=~/.rtorrent/watch/*.torrent,d.set_custom1=~/Downloads"
+schedule = watch_directory,5,5,"load_start=~/.rtorrent/watch/*.torrent,\"d.set_custom=target,~/Downloads\""
 schedule = untied_directory,5,5,stop_untied=
 
 # Move completed torrents from ~/.rtorrent/incomplete to ~/Downloads
-system.method.insert = checkdirs,simple,"not=\"$equal={d.get_custom1=,d.get_base_path=}\""
-system.method.insert = movecheck,simple,"and={checkdirs=,d.get_complete=,d.get_custom1=}"
-system.method.insert = movedir,simple,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,$d.get_custom1=;d.set_custom1=;d.stop=;d.start="
-system.method.set_key = event.download.hash_done,move_hashed,"branch={$movecheck=,movedir=}"
+system.method.set_key = event.download.finished,move_complete,"d.set_directory=\"$d.get_custom=target\"; execute=mv,-u,$d.get_base_path=,\"$d.get_custom=target\""
 
 # Close torrents when diskspace is low.
 schedule = low_diskspace,5,60,close_low_diskspace=200M
