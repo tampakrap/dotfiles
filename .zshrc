@@ -13,6 +13,7 @@ alias isc='osc -A https://api.suse.de/'
 alias caff='caff -m yes'
 alias git="hub"
 alias facepalm="cat ~/.zsh/facepalm"
+alias weechat="weechat-curses"
 alias :q="facepalm"
 alias :wq="facepalm"
 
