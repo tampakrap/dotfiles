@@ -8,3 +8,6 @@
 .weechat/certs
 .weechat/logs
 .weechat/*.log
+.weechat/script
+.weechat/perl
+.weechat/python
