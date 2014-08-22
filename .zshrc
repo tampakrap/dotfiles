@@ -13,9 +13,9 @@ alias isc='osc -A https://api.suse.de/'
 alias caff='caff -m yes'
 alias git="hub"
 alias facepalm="cat ~/.zsh/facepalm"
-alias weechat="weechat-curses"
 alias :q="facepalm"
 alias :wq="facepalm"
+alias weechat="WEECHAT_PASSPHRASE=\$(pass tampakrap.gr/rakim/weechat) weechat"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
 if type -p colorsvn &> /dev/null ; then alias svn="colorsvn" ; fi
