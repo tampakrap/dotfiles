@@ -1,6 +1,5 @@
 " Vundle
 set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -11,23 +10,28 @@ Bundle 'gmarik/vundle'
 
 " The bundles you install will be listed here
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'klen/python-mode'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-bundler'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'ssh://hg@bitbucket.org/pentie/vimrepress'
+Bundle 'bling/vim-airline'
+Bundle 'vim-scripts/vimrepress'
+Bundle 'PotatoesMaster/i3-vim-syntax'
+Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'mhinz/vim-signify'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'GutenYe/gem.vim'
 
 filetype plugin indent on
-
-" Better copy & paste
-set pastetoggle=<F2>
-set clipboard=unnamed
 
 " Rebind <Leader> key
 let mapleader = ","
 
-" Bind nohl
-" Removes highlight of your last search
+" Bind nohl, removes highlight of your last search
 noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
@@ -37,6 +41,12 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+" disable arrow keys
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
 
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
@@ -56,10 +66,7 @@ match BadWhitespace /\s\+$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Color scheme
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
-" color wombat256mod
 set background=dark
 
 " Enable syntax highlighting
@@ -72,14 +79,9 @@ set cin
 " Showing line numbers and length
 set number
 set tw=79
-"set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
 set colorcolumn=80
 highlight ColorColumn ctermbg=Grey
-
-" 2 spaces instead of 4 for certain filetypes
-autocmd FileType puppet set sts=2 sw=2 ts=2
-autocmd FileType ruby set sts=2 sw=2 ts=2
 
 " easier formatting of paragraphs
 vmap Q gq
@@ -96,6 +98,10 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+" 2 spaces instead of 4 for certain filetypes
+autocmd FileType puppet set sts=2 sw=2 ts=2
+autocmd FileType ruby set sts=2 sw=2 ts=2
+
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
 
@@ -104,13 +110,7 @@ set incsearch
 set ignorecase
 set smartcase
 
-" after performing a search, matches are highlighted. get rid of the
-" highlighting with <Enter>
-" breaks e. g. quickfix window! (:.cc still works)
-nnoremap <silent> <Enter> :nohl<Enter>
-
-" Disable stupid backup and swamp files - they trigger too many events
-" for file system watchers
+" Disable stupid backup and swamp files - they trigger too many events for file system watchers
 set nobackup
 set nowritebackup
 set noswapfile
@@ -121,12 +121,17 @@ set backspace=indent,eol,start
 " Settings for nerdtree
 map <F2> :NERDTreeToggle<CR>
 
-""" Python IDE setup
+" Allow saving of files as sudo when I forget to start vim with sudo
+cmap w!! w !sudo tee > /dev/null %
 
-" Settings for vim-powerline
+" Enable mouse inside vim
+set mouse=a
+
+" Settings for vim-airline
 set laststatus=2
 set noshowmode
-let g:PowerlineSymbols = 'fancy'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
@@ -135,35 +140,12 @@ set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 " Settings for python-mode
-let g:pymode_rope_goto_def_newwin = "vnew"
-let g:pymode_rope_extended_complete = 1
-let g:pymode_breakpoint = 0
-let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax_builtin_funcs = 0
-let g:pymode_lint_mccabe_complexity = 200
+let g:pymode_rope_goto_definition_cmd= "vnew"
 let g:pymode_lint_ignore = ""
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace() # XXX BREAKPOINT'
+let g:pymode_options = 0
 map <Leader>g :call RopeGotoDefinition()<CR>
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
-" Python folding
-" mkdir -p ~/.vim/ftplugin
-" wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
-set ft=pyedit
+
+" Settings for vim-signify
+let g:signify_vcs_list = [ 'git', 'hg' ]
