@@ -52,6 +52,12 @@ map <Down> <Nop>
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
+" easier moving between buffers
+set hidden
+map <Leader>h <esc>:bprevious<CR>
+map <Leader>l <esc>:bnext<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
 
@@ -130,17 +136,18 @@ set mouse=a
 " Settings for vim-airline
 set laststatus=2
 set noshowmode
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
+let g:ctrlp_show_hidden = 1
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 " Settings for python-mode
-let g:pymode_rope_goto_definition_cmd= "vnew"
+let g:pymode_rope_goto_definition_cmd = "vnew"
 let g:pymode_lint_ignore = ""
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace() # XXX BREAKPOINT'
 let g:pymode_options = 0
