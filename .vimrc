@@ -25,6 +25,7 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'mhinz/vim-signify'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'GutenYe/gem.vim'
+Bundle 'stephpy/vim-yaml'
 
 filetype plugin indent on
 
