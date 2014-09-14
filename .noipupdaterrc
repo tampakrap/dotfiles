@@ -1,7 +1,8 @@
 PASS_NOIP=$(pass sites/no-ip.com)
 PASS_ROUTER=$(pass tampakrap.gr/steele)
-
-USERNAME=$(echo "${PASS_NOIP}" | grep username | cut -d' ' -f2)
+LOGDIR="~/.log"
+CACHEDIR="~/.cache/noipupdater"
+USERNAME=$(echo "${PASS_NOIP}" | grep username | cut -d' ' -f4)
 PASSWORD=$(echo "${PASS_NOIP}" | head -n 1)
 HOST="rakim.ddns.net"
 SSID="CONN-X_7753"
