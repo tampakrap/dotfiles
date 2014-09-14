@@ -1,12 +1,35 @@
+# Get credentials from password store
 PASS_NOIP=$(pass sites/no-ip.com)
 PASS_ROUTER=$(pass tampakrap.gr/steele)
-LOGDIR="~/.log"
-CACHEDIR="~/.cache/noipupdater"
+
+# Credentials to log in to no-ip.com
 USERNAME=$(echo "${PASS_NOIP}" | grep username | cut -d' ' -f4)
 PASSWORD=$(echo "${PASS_NOIP}" | head -n 1)
+
+# Hostname as registered in no-ip.com
 HOST="rakim.ddns.net"
+
+# Logdir and cachedir for noipupdater
+LOGDIR="${HOME}/.log"
+CACHEDIR="${HOME}/.cache/noipupdater"
+
+### All variables below are OPTIONAL:
+
+# SSID of the wireless lan. If specified, noipupdater will run only if the
+# current SSID and the variable below match
 SSID="CONN-X_7753"
-ROUTERWANIPSTR="wanaddress"
-ROUTERURL="192.168.1.1/info.html"
+
+# The variables below need to be specified in case we want to retrieve the
+# current IP from our router's web interface instead of an external webpage.
+
+# Credentials to log in to the router
 ROUTERUSER=$(echo "${PASS_ROUTER}" | grep username | cut -d' ' -f2)
 ROUTERPASSWORD=$(echo "${PASS_ROUTER}" | head -n 1)
+
+# The URL of the router that contains the current IP
+ROUTERURL="192.168.1.1/info.html"
+
+# A string in router's HTML page to grep in order to extract the IP
+ROUTERIPSTRING="wanaddress"
+
+# vim:ft=sh
