@@ -3,7 +3,7 @@ PASS_NOIP=$(pass sites/no-ip.com)
 PASS_ROUTER=$(pass tampakrap.gr/steele)
 
 # Credentials to log in to no-ip.com
-USERNAME=$(echo "${PASS_NOIP}" | grep username | cut -d' ' -f4)
+USERNAME=$(echo "${PASS_NOIP}" | grep username | cut -d' ' -f2)
 PASSWORD=$(echo "${PASS_NOIP}" | head -n 1)
 
 # Hostname as registered in no-ip.com
