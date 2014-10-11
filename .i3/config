@@ -138,6 +138,8 @@ bindsym XF86LaunchA exec "scrot Pictures/screenshots/%Y-%m-%d-%H%M%S.png"
 
 focus_follows_mouse no
 
+bindsym XF86AudioMute exec "amixer -q sset Master toggle"
+
 # MODES
 
 # resize window (you can also use the mouse for that)
