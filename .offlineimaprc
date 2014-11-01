@@ -4,7 +4,7 @@ accounts = gentoo, gmail
 maxsyncaccounts = 5
 ui = ttyui
 socktimeout = 50
-pythonfile = ~/bin/lib/offlineimap.py
+pythonfile = ~/bin/getmailpass
 
 [Account gentoo]
 localrepository = local_gentoo
