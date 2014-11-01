@@ -1,0 +1,9 @@
+set folder = ~/.Mail/gentoo
+set postponed = +drafts
+set from = "tampakrap@gentoo.org"
+set hostname = "gentoo.org"
+set record = +sent
+
+#set signature = ~/.mutt/signature
+
+# vim: ft=muttrc

@@ -1,0 +1,9 @@
+set folder = ~/.Mail/gmail
+set postponed = +[Gmail].Drafts
+set from = "tampakrap@gmail.com"
+set hostname = "gmail.com"
+unset record
+
+#set signature = ~/.mutt/signature
+
+# vim: ft=muttrc
