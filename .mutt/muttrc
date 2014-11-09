@@ -35,4 +35,3 @@ source ~/.mutt/sidebar
 
 folder-hook 'gmail' 'source ~/.mutt/acc_gmail'
 folder-hook 'gentoo' 'source ~/.mutt/acc_gentoo'
-source ~/.mutt/acc_gmail
