@@ -1,5 +1,5 @@
 .ssh/id_rsa*
-.ssh/known_hosts
+.ssh/known_hosts*
 .gnupg/private-keys-v1.d
 .gnupg/*.gpg*
 .gnupg/random_seed
