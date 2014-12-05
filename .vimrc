@@ -108,6 +108,8 @@ set expandtab
 " 2 spaces instead of 4 for certain filetypes
 autocmd FileType puppet set sts=2 sw=2 ts=2
 autocmd FileType ruby set sts=2 sw=2 ts=2
+autocmd FileType eruby set sts=2 sw=2 ts=2
+autocmd FileType yaml set sts=2 sw=2 ts=2
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
