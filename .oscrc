@@ -81,9 +81,9 @@ http_retries = 3
 # Skip signature verification of packages used for build.
 no_verify = 0
 # jump into the debugger in case of errors
-post_mortem = 1
+post_mortem = 0
 # print call traces in case of errors
-traceback = 1
+traceback = 0
 # use KDE/Gnome/MacOS/Windows keyring for credentials if available
 use_keyring = 1
 # check for unversioned/removed files before commit
@@ -120,4 +120,4 @@ email = tampakrap@opensuse.org
 #pass =
 # Force using of keyring for this API
 #keyring = 1
-trusted_prj = openSUSE:Factory openSUSE:13.1 network:utilities systemsmanagement:puppet devel:languages:ruby
+trusted_prj = openSUSE:Factory openSUSE:13.2 network:utilities systemsmanagement:puppet devel:languages:ruby SUSE:SLE-11:SP3 devel:languages:ruby:backports devel:languages:python
