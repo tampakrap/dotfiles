@@ -3,6 +3,7 @@
 .gnupg/private-keys-v1.d
 .gnupg/*.gpg*
 .gnupg/random_seed
+.gnupg/crls.d
 .imapfilter/certificates
 .noipupdater/log
 .noipupdater/cache
