@@ -27,7 +27,7 @@ hdr_order       From: To: Cc: Bcc: Date: Subject:
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/html/mail.html && firefox ~/.cache/mutt/html/mail.html && rm ~/.cache/mutt/html/mail.html<enter>"
-macro pager <F10> "<pipe-message>~/bin/viewhtmlmail\n" "View HTML in browser"
+macro pager <F10> "<pipe-message>~/bin/viewhtmlmail.py\n" "View HTML in browser"
 
 source ~/.mutt/color
 source ~/.mutt/gpg
