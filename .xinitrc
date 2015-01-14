@@ -13,5 +13,5 @@ xmodmap ~/.Xmodmap
 urxvtd-256color -q -o -f
 sh ~/.fehbg &
 xset s 180 180
-syndaemon -t -k -i 2 -d
+case $HOSTNAME in rakim|virtuoso) syndaemon -t -k -i 2 -d ;; esac
 exec /usr/bin/i3
