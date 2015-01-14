@@ -1,7 +1,14 @@
-#!/bin/bash
+#!/bin/sh
+
 xrdb -merge ~/.Xresources
 xcompmgr &
-setxkbmap 'us,gr,cz' -model mac -option -option 'grp:lalt_toggle'
+case $HOSTNAME in
+    xzibit|virtuoso) setxkbmap 'us,gr,cz' -option -option 'grp:lwin_toggle' ;;
+    rakim)
+        setxkbmap 'us,gr,cz' -model mac -option -option 'grp:lalt_toggle'
+        xmodmap ~/.Xmodmap_mac
+        ;;
+esac
 xmodmap ~/.Xmodmap
 urxvtd-256color -q -o -f
 sh ~/.fehbg &

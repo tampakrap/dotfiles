@@ -3,9 +3,3 @@ clear Lock
 remove Control = Control_R
 keysym Caps_Lock = Control_R
 add mod3 = Control_R
-
-! swap left Alt and Super keys
-remove mod1 = Alt_L
-remove mod4 = Super_L
-keysym Alt_L = Super_L
-keysym Super_L = Alt_L
