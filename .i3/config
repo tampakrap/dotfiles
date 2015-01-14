@@ -169,7 +169,7 @@ bindsym $mod+r mode "resize"
 
 mode "quit" {
     bindsym l exec --no-startup-id "i3lock -i /home/tampakrap/Pictures/lock.png", mode "default"
-    bindsym e exec --no-startup-id "sudo systemctl restart xdm.service", mode "default"
+    bindsym e exec --no-startup-id "sudo systemctl restart display-manager", mode "default"
     bindsym s exec --no-startup-id "systemctl suspend", mode "default"
     bindsym r exec --no-startup-id "systemctl reboot", mode "default"
     bindsym p exec --no-startup-id "systemctl poweroff", mode "default"
