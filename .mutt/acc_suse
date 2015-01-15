@@ -1,0 +1,9 @@
+set folder = ~/.Mail/suse
+set postponed = +Drafts
+set from = "tchatzimichos@suse.com"
+set hostname = "suse.com"
+#set record = +Sent ?? need to check if it auto-saves sent mails
+
+#set signature = ~/.mutt/signature
+
+# vim: ft=muttrc
