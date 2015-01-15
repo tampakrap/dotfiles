@@ -1,6 +1,6 @@
 dofile("/home/tampakrap/.imapfilter/common.lua")
 
-status, password = pipe_from('~/bin/getmailpass gentoo')
+status, password = pipe_from('~/bin/getmailpass.py gentoo')
 password = password.gsub(password, ' ', '').gsub(password, '\n', '')
 
 gentoo = IMAP {

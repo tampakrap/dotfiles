@@ -1,6 +1,6 @@
 dofile("/home/tampakrap/.imapfilter/common.lua")
 
-status, password = pipe_from('~/bin/getmailpass gmail')
+status, password = pipe_from('~/bin/getmailpass.py gmail')
 password = password.gsub(password, ' ', '').gsub(password, '\n', '')
 
 gmail = IMAP {
