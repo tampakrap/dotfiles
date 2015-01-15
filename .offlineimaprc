@@ -48,3 +48,21 @@ folderfilter = lambda foldername: foldername not in [
                    '[Gmail]/All Mail',
                    '[Gmail]/Important',
                    '[Gmail]/Starred',]
+
+[Account suse]
+localrepository = local_suse
+remoterepository = remote_suse
+autorefresh = 10
+quick = 0
+
+[Repository local_suse]
+type = Maildir
+localfolders = ~/.Mail/suse
+
+[Repository remote_suse]
+type = IMAP
+remotehost = imap.suse.de
+remoteuser = tchatzimichos
+remotepasseval = get_passeval('suse')
+ssl = yes
+remoteport = 993
