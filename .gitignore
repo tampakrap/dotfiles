@@ -4,7 +4,7 @@
 .gnupg/*.gpg*
 .gnupg/random_seed
 .gnupg/crls.d
-.gnupg/pubring.kbx
+.gnupg/pubring.kbx*
 .imapfilter/certificates
 .noipupdater/log
 .noipupdater/cache
