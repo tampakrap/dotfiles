@@ -3,7 +3,7 @@ dofile("/home/tampakrap/.imapfilter/common.lua")
 status, password = pipe_from('~/bin/getmailpass.py suse')
 password = password.gsub(password, ' ', '').gsub(password, '\n', '')
 
-gentoo = IMAP {
+suse = IMAP {
     server = 'imap.suse.de',
     username = 'tchatzimichos',
     password = password,
@@ -11,7 +11,9 @@ gentoo = IMAP {
     port = 993,
 }
 
-gentoo_all = gentoo['INBOX']:select_all()
-gentoo_new = gentoo['INBOX']:is_new()
-gentoo_recent = gentoo['INBOX']:is_recent()
-gentoo_unseen = gentoo['INBOX']:is_unseen()
+suse_all = suse['INBOX']:select_all()
+suse_new = suse['INBOX']:is_new()
+suse_recent = suse['INBOX']:is_recent()
+suse_unseen = suse['INBOX']:is_unseen()
+
+suse_unseen:match_field('X-OBS-event-type', 'build_.*'):move_messages(suse['logs/obs/builds'])
