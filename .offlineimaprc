@@ -58,6 +58,7 @@ quick = 0
 [Repository local_suse]
 type = Maildir
 localfolders = ~/.Mail/suse
+nametrans = lambda folder: folder if folder == 'INBOX' else 'INBOX.' + folder
 
 [Repository remote_suse]
 type = IMAP
@@ -66,3 +67,4 @@ remoteuser = tchatzimichos
 remotepasseval = get_passeval('suse')
 ssl = yes
 remoteport = 993
+nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
