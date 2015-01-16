@@ -68,3 +68,21 @@ remotepasseval = get_passeval('suse')
 ssl = yes
 remoteport = 993
 nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
+
+[Account novell]
+localrepository = local_novell
+remoterepository = remote_novell
+autorefresh = 10
+quick = 0
+
+[Repository local_novell]
+type = Maildir
+localfolders = ~/.Mail/novell
+
+[Repository remote_novell]
+type = IMAP
+remotehost = gwmail.emea.novell.com
+remoteuser = tchatzimichos
+remotepasseval = get_passeval('novell')
+ssl = yes
+remoteport = 993
