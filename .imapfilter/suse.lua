@@ -44,6 +44,7 @@ suse_list('qa-maintenance', 'de'):move_messages(suse['lists/suse/qa-maintenance'
 suse_list('qa-maintenance-dev', 'de'):move_messages(suse['lists/suse/qa-maintenance-dev'])
 suse_list('qa-maintenance-reports', 'de'):move_messages(suse['lists/suse/qa-maintenance-reports'])
 suse_list('patch-management', 'de'):move_messages(suse['lists/suse/patch-management'])
+suse_list('research', 'de'):move_messages(suse['lists/suse/research'])
 suse_list('talk-cz', 'cz'):move_messages(suse['lists/suse/talk-cz'])
 logs = suse_unseen:match_from('GWAVA@novell\\.com') + suse_unseen:match_from('maint-coord@(novell\\.com|suse\\.de)'):match_subject('Maintenance QA (SLA|KPI) watchdog report - [0-9]{8}') + suse_unseen:match_field('RT-Ticket', 'SUSE Ticket #[0-9]{5,6}') + suse_unseen:contain_from('swamp_noreply@suse\\.de'):contain_to('tchatzimichos@suse.com')
 logs:move_messages(suse['logs'])
