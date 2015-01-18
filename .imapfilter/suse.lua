@@ -31,7 +31,7 @@ end
 suse_list = function (list_prefix)
     domain = 'de'
     local cz_lists = {'cz', 'ops', 'talk-cz'}
-    for _,d in pairs(cz_lists) do
+    for _,l in pairs(cz_lists) do
         if list_prefix == l then
             domain = 'cz'
             break
