@@ -28,7 +28,15 @@ opensuse_list = function (list_prefix)
 end
 
 
-suse_list = function (list_prefix, domain)
+suse_list = function (list_prefix)
+    domain = 'de'
+    local cz_lists = {'cz', 'talk-cz'}
+    for _,d in pairs(cz_lists) do
+        if list_prefix == l then
+            domain = 'cz'
+            break
+        end
+    end
     list = list_prefix .. '@suse\\.' .. domain
     return suse_unseen:match_field('X-BeenThere', '^' .. list .. '$')
 end
@@ -38,14 +46,14 @@ opensuse_list('opensuse-announce'):move_messages(suse['lists/opensuse'])
 opensuse_list('gsoc-mentors'):move_messages(suse['lists/opensuse/gsoc-mentors'])
 opensuse_list('opensuse-cz'):move_messages(suse['lists/opensuse/opensuse-cz'])
 opensuse_list('opensuse-el'):move_messages(suse['lists/opensuse/opensuse-el'])
-suse_list('cz', 'cz'):move_messages(suse['lists/suse/cz'])
-suse_list('opensuse-internal', 'de'):move_messages(suse['lists/suse/opensuse-internal'])
-suse_list('qa-maintenance', 'de'):move_messages(suse['lists/suse/qa-maintenance'])
-suse_list('qa-maintenance-dev', 'de'):move_messages(suse['lists/suse/qa-maintenance-dev'])
-suse_list('qa-maintenance-reports', 'de'):move_messages(suse['lists/suse/qa-maintenance-reports'])
-suse_list('patch-management', 'de'):move_messages(suse['lists/suse/patch-management'])
-suse_list('research', 'de'):move_messages(suse['lists/suse/research'])
-suse_list('talk-cz', 'cz'):move_messages(suse['lists/suse/talk-cz'])
+suse_list('cz'):move_messages(suse['lists/suse/cz'])
+suse_list('opensuse-internal'):move_messages(suse['lists/suse/opensuse-internal'])
+suse_list('qa-maintenance'):move_messages(suse['lists/suse/qa-maintenance'])
+suse_list('qa-maintenance-dev'):move_messages(suse['lists/suse/qa-maintenance-dev'])
+suse_list('qa-maintenance-reports'):move_messages(suse['lists/suse/qa-maintenance-reports'])
+suse_list('patch-management'):move_messages(suse['lists/suse/patch-management'])
+suse_list('research'):move_messages(suse['lists/suse/research'])
+suse_list('talk-cz'):move_messages(suse['lists/suse/talk-cz'])
 logs = suse_unseen:match_from('GWAVA@novell\\.com') + suse_unseen:match_from('maint-coord@(novell\\.com|suse\\.de)'):match_subject('Maintenance QA (SLA|KPI) watchdog report - [0-9]{8}') + suse_unseen:match_field('RT-Ticket', 'SUSE Ticket #[0-9]{5,6}') + suse_unseen:contain_from('swamp_noreply@suse\\.de'):contain_to('tchatzimichos@suse.com')
 logs:move_messages(suse['logs'])
 ibs = suse_unseen:match_field('X-OBS-URL', 'https://build.suse.de')
