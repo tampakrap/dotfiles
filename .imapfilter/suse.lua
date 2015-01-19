@@ -56,6 +56,7 @@ suse_list('opensuse-internal'):move_messages(suse['lists/suse/opensuse-internal'
 suse_list('qa-maintenance'):move_messages(suse['lists/suse/qa-maintenance'])
 suse_list('qa-maintenance-dev'):move_messages(suse['lists/suse/qa-maintenance-dev'])
 suse_list('qa-maintenance-reports'):move_messages(suse['lists/suse/qa-maintenance-reports'])
+suse_list('qa-reports'):move_messages(suse['lists/suse/qa-reports'])
 suse_list('qa-team'):move_messages(suse['lists/suse/qa-team'])
 suse_list('research'):move_messages(suse['lists/suse/research'])
 suse_list('results'):move_messages(suse['lists/suse/results'])
