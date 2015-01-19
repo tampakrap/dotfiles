@@ -53,6 +53,7 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+compctl -g '*tar *.tar.bz2 *.tbz2 *.tar.gz *.tgz *.tar.xz *.bz2 *.gz *.zip *.jar *.rar *.Z *.gem *.rpm *.7z' + -g '*(-/)' extract
 
 autoload -U tetris
 zle -N tetris
