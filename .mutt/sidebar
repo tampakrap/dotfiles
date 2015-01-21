@@ -1,5 +1,5 @@
 set sidebar_visible = yes
-set sidebar_width = 35
+set sidebar_width = 42
 set sidebar_delim = '|'
 set sidebar_shortpath = yes
 bind index,pager \CP sidebar-prev
