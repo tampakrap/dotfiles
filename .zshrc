@@ -2,6 +2,7 @@ export COLORTERM=yes
 export CC=gcc
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
+[[ $HOSTNAME == 'rakim' ]] && export LC_ALL="cs_CZ.UTF-8" LANG="cs_CZ.UTF-8"
 
 [ -f /etc/DIR_COLORS ] && eval $(dircolors -b /etc/DIR_COLORS)
 export ZLSCOLORS="${LS_COLORS}"
