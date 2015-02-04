@@ -2,6 +2,7 @@ export COLORTERM=yes
 export CC=gcc
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
+[[ $HOSTNAME == 'rakim' ]] && export LC_ALL="cs_CZ.UTF-8" LANG="cs_CZ.UTF-8"
 
 [ -f /etc/DIR_COLORS ] && eval $(dircolors -b /etc/DIR_COLORS)
 export ZLSCOLORS="${LS_COLORS}"
@@ -17,6 +18,7 @@ alias :q="facepalm"
 alias :wq="facepalm"
 alias weechat="WEECHAT_PASSPHRASE=\$(pass tampakrap.gr/rakim/weechat) weechat"
 alias todo="edit ~/Documents/todo"
+alias nmrestart="for stat in off on; do nmcli n \$stat; done"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
 if type -p colorsvn &> /dev/null ; then alias svn="colorsvn" ; fi

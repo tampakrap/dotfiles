@@ -7,7 +7,7 @@ suse = IMAP {
     server = 'imap.suse.de',
     username = 'tchatzimichos',
     password = password,
-    ssl = 'tls1',
+    ssl = 'tls1.3',
     port = 993,
 }
 
