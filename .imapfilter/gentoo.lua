@@ -19,7 +19,7 @@ gentoo_unseen = gentoo['INBOX']:is_unseen()
 spam = gentoo_unseen:match_field('X-Spam-Flag', 'YES') + gentoo_unseen:match_from('(goldenmarketing|qnews|traficfcs|panel25|payapars|simedi|digiyar)\\.ir|(planetfone\\.com|pbh\\.gov)\\.br|(poworsave|waimaoedm|newageink|zyoux|allarelbus|messbest|richvalvee|powersqve|plazatur|ac2tech|126|industries-eu|partsbuy)\\.com|promofast\\.info|(cp-mi|miks-it|bk|lolern)\\.ru|(ussolardept|amazonclickhere)\\.eu|zeraimundo1515\\.net|almanet\\.tk|(flywer|lwtyui)\\.asia|(successex|docustem)\\.xyz|(philipids\\.net|sarina)\\.in|carpandfun\\.de|planet\\.tn|mircodellavecchia\\.it|uab\\.edu|grantfundingusa\\.org')
 spam:move_messages(gentoo['spam'])
 
-hosting_all = '(infra-(4launch|eukhost|globalsign|hetzner|mti|rackspace|rax|vr)@gentoo|(support|hosting)@osuosl)\\.org|communication@magic\\.fr|s(ales|upport)@7l\\.com|(support|buchhaltung)@manitu\\.de'
+hosting_all = '(infra-(4launch|amazon|eukhost|globalsign|hetzner|mti|rackspace|rax|vr)@gentoo|(support|hosting)@osuosl)\\.org|communication@magic\\.fr|s(ales|upport)@7l\\.com|(support|buchhaltung)@manitu\\.de'
 hosting = gentoo_unseen:match_from(hosting_all) + gentoo_unseen:match_to(hosting_all) + gentoo_unseen:match_cc(hosting_all)
 hosting:move_messages(gentoo['hosting'])
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-announce@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-announce'])
