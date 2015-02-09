@@ -79,4 +79,4 @@ obs_sr = obs:match_field('X-OBS-event-type', 'comment_for_.*|request_.*') + suse
 obs_sr:move_messages(suse['logs/obs/sr'])
 opensuse_redmine_admin = suse_unseen:match_subject('\\[openSUSE admin - tickets #[0-9]{4}\\].*') + suse_unseen:contain_field('X-Redmine-Project', 'opensuse-admin')
 opensuse_redmine_admin:move_messages(suse['logs/progress/opensuse-admin'])
-suse_unseen:match_to('DL-(TAG|SU|MicroFocusInternational)-(A[lL]{2}|EMPLOYEES|Employees)(\\.iList\\.INTERNET)?@ilist\\.attachmategroup\\.com'):move_messages(suse['newsletters'])
+suse_unseen:match_to('DL-(Prague|TAG|SU|MicroFocusInternational)-(A[lL]{2}|EMPLOYEES|Employees|Office)(\\.iList\\.INTERNET)?@ilist\\.attachmategroup\\.com'):move_messages(suse['newsletters'])
