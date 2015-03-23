@@ -69,7 +69,7 @@ logs = suse_unseen:match_from('GWAVA@novell\\.com|orthos_noreply@suse\\.de|helpd
 logs:move_messages(suse['logs'])
 bugzilla = suse_unseen:match_from('[Bb]ugzilla_[Nn]o[Rr]eply@novell\\.com')
 bugzilla:match_to('tampakrap@opensuse\\.org|tchatzimichos@suse\\.c(om|z)'):move_messages(suse['logs/bugzilla'])
-github = suse_unseen:match_from('((noreply|support)@github|notifications@travis-ci)\\.com') + suse_unseen:contain_field('X-GitHub-Recipient', 'tampakrap')
+github = suse_unseen:match_from('((noreply|support|notifications)@github|(notifications|builds)@travis-ci)\\.com') + suse_unseen:contain_field('X-GitHub-Recipient', 'tampakrap')
 github:move_messages(suse['logs/github'])
 ibs = suse_unseen:match_field('X-OBS-URL', 'https://build.suse.de')
 ibs:match_field('X-OBS-event-type', 'comment_for_.*|request_.*'):move_messages(suse['logs/ibs/sr'])

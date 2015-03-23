@@ -16,10 +16,10 @@ gentoo_new = gentoo['INBOX']:is_new()
 gentoo_recent = gentoo['INBOX']:is_recent()
 gentoo_unseen = gentoo['INBOX']:is_unseen()
 
-spam = gentoo_unseen:match_field('X-Spam-Flag', 'YES') + gentoo_unseen:match_from('(goldenmarketing|qnews|traficfcs|panel25|payapars|simedi|digiyar)\\.ir|(planetfone\\.com|pbh\\.gov)\\.br|(poworsave|waimaoedm|newageink|zyoux|allarelbus|messbest|richvalvee|powersqve|plazatur|ac2tech|126|industries-eu|partsbuy|sohu|gadget-academy|newdensen|insurer|sz-xsn|enigmaadvertising|uuuddii|newdensen|combis-info)\\.com|promofast\\.info|(cp-mi|miks-it|bk|lolern)\\.ru|(ussolardept|amazonclickhere|niekerele|kfvoeirf)\\.eu|(zeraimundo1515|spitfireukicursos2015|medianetrix|ameritech|entrust|daum)\\.net|almanet\\.tk|(flywer|lwtyui)\\.asia|(successex|docustem|monfle|toronate|alkansas)\\.xyz|((jesult|philipids)\\.net|sarina|credu|call\\.gen)\\.in|carpandfun\\.de|(planet|map\\.com)\\.tn|mircodellavecchia\\.it|uab\\.edu|(dnstate|grantfundingusa)\\.org|(splaim|symput|requet|kubrew|carnly)\\.top|century\\.vni|colorusb\\.cn|usps\\.gov')
+spam = gentoo_unseen:match_field('X-Spam-Flag', 'YES') + gentoo_unseen:match_from('(goldenmarketing|qnews|traficfcs|panel25|payapars|simedi|digiyar)\\.ir|(planetfone\\.com|pbh\\.gov)\\.br|(poworsave|waimaoedm|newageink|zyoux|allarelbus|messbest|richvalvee|powersqve|plazatur|ac2tech|126|industries-eu|partsbuy|sohu|gadget-academy|newdensen|insurer|sz-xsn|enigmaadvertising|uuuddii|newdensen|combis-info|arabianbateelcorp|friendango|sarinawebdesign|eseateqiao|hxtradehx|bizdiagnosis|gaphu|mailbulteni)\\.com|promofast\\.info|(cp-mi|miks-it|bk|lolern)\\.ru|(ussolardept|amazonclickhere|niekerele|kfvoeirf)\\.eu|(zeraimundo1515|spitfireukicursos2015|medianetrix|ameritech|entrust|daum|linkwebdesignservices)\\.net|(almanet|bimeh)\\.tk|(flywer|lwtyui)\\.asia|(successex|docustem|monfle|toronate|alkansas|conflicki)\\.xyz|(sarina|credu|(jesult|philipids)\\.net|(solution|call)\\.gen)\\.in|carpandfun\\.de|(planet|map\\.com)\\.tn|mircodellavecchia\\.it|uab\\.edu|(dnstate|grantfundingusa|cadeautheque)\\.org|(splaim|symput|requet|kubrew|carnly|fupt|naival|hish|ount|slea|espila|xoched|gezx|suppoy)\\.top|century\\.vni|colorusb\\.cn|usps\\.gov|promo-bg\\.biz')
 spam:move_messages(gentoo['spam'])
 
-hosting_all = '(infra-(4launch|amazon|eukhost|globalsign|hetzner|mti|rackspace|rax|vr)@gentoo|(support|hosting)@osuosl)\\.org|communication@magic\\.fr|s(ales|upport)@7l\\.com|(support|buchhaltung)@manitu\\.de'
+hosting_all = '(infra-(4launch|amazon|eukhost|globalsign|hetzner|leaseweb|mti|rackspace|rax(-master)?|vr)@gentoo|(support|hosting)@osuosl)\\.org|communication@magic\\.fr|s(ales|upport)@7l\\.com|(support|buchhaltung)@manitu\\.de|support@inerail.net'
 hosting = gentoo_unseen:match_from(hosting_all) + gentoo_unseen:match_to(hosting_all) + gentoo_unseen:match_cc(hosting_all)
 hosting:move_messages(gentoo['hosting'])
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-announce@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-announce'])
@@ -30,7 +30,7 @@ gentoo_unseen:match_field('X-BeenThere', 'gentoo-foundation-announce@lists\\.gen
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-soc@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-soc'])
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-user-cs@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-user-cs'])
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-user-el@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-user-el'])
-logs = gentoo_unseen:match_from('(g(archives|cvsd-rsync|infrastatus|web|mirror|qa|packages|planet)|root|apache)@gentoo\\.org'):match_to('(root|gweb|infra-automated-retire|recruiters|planet)@gentoo\\.org') + gentoo_unseen:contain_from('root@osprey.gentoo.org'):contain_to('root') + gentoo_unseen:contain_from('ipmi@bittern.gentoo.oob') + gentoo_unseen:contain_to('infra-vr@gentoo.org') + gentoo_unseen:contain_to('root@gentoo.org'):match_subject('[*]{3} SECURITY information for [a-z]+ [*]{3}')
+logs = gentoo_unseen:match_from('(g(archives|cvsd-rsync|infrastatus|web|mirror|qa|packages|planet)|root|apache|MAILER-DAEMON)@gentoo\\.org'):match_to('(root|gweb|infra-automated-retire|recruiters|planet)@gentoo\\.org') + gentoo_unseen:contain_from('root@osprey.gentoo.org'):contain_to('root') + gentoo_unseen:contain_from('ipmi@bittern.gentoo.oob') + gentoo_unseen:contain_to('infra-vr@gentoo.org') + gentoo_unseen:contain_to('root@gentoo.org'):match_subject('[*]{3} SECURITY information for [a-z]+ [*]{3}')
 logs:move_messages(gentoo['logs'])
 blogs = gentoo_unseen:contain_from('wordpress@blogs.gentoo.org')
 myblog = blogs:contain_subject('[the purple greeko]')
@@ -45,7 +45,8 @@ bugzilla:contain_to('suse@gentoo.org'):move_messages(gentoo['logs/bugzilla/suse'
 bugzilla:contain_to('sysadmin@gentoo.org'):move_messages(gentoo['logs/bugzilla/sysadmin'])
 gentoo_unseen:contain_to('cfengine@gentoo.org'):move_messages(gentoo['logs/cfengine'])
 gentoo_unseen:match_from('(icinga@gentoo|nagios@osuosl)\\.org'):move_messages(gentoo['logs/icinga'])
-gentoo_unseen:match_from('((noreply|support)@github|notifications@travis-ci)\\.com'):move_messages(gentoo['logs/github'])
+github = gentoo_unseen:match_from('((noreply|support|notifications)@github|(notifications|builds)@travis-ci)\\.com') + gentoo_unseen:contain_from('X-GitHub-Recipient', 'tampakrap')
+github:move_messages(gentoo['logs/github'])
 gentoo_unseen:contain_to('infra-commits@gentoo.org'):move_messages(gentoo['logs/infra-commits'])
 gentoo_unseen:contain_from('puppet@puppetmaster.gentoo.org'):move_messages(gentoo['logs/puppet'])
 gentoo_unseen:match_from('donotreply@wordpress\\.com'):move_messages(gentoo['newsletters'])
