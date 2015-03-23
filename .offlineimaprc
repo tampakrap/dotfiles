@@ -43,7 +43,7 @@ localfolders = ~/.Mail/gmail
 type = Gmail
 remoteuser = tampakrap
 remotepasseval = get_passeval('gmail')
-cert_fingerprint = fb28fb2d7a043b18d051bd0cfddf22bfc14012fc, d4ddbc3715ed1e919a185dd634581a05930e4d43, d6b90ffd06292b1724e0644563299fffc9878780, 6d1b5b5ee0180ab493b71d3b94534b5ab937d042, fb679e12a6ff179e00a454da8441cc1b6c3d261f, 9d5e4c35f59fcb4edd3fa4d47a453bbc1cf2aff1, e227f1d600c0c2f7115775f5cb748805677db57d, cf79537f0a504c116ee3cfb854bd58a70089edc0
+cert_fingerprint = bfef6858bc803af948632c52241d15dd7696b4d2, 606dab919155192b372ebeb390a773ce01c1d2d2, e0478e5b1535d51ac3672543f3a0d5943fb19fa2, fb28fb2d7a043b18d051bd0cfddf22bfc14012fc, d4ddbc3715ed1e919a185dd634581a05930e4d43, d6b90ffd06292b1724e0644563299fffc9878780, 6d1b5b5ee0180ab493b71d3b94534b5ab937d042, fb679e12a6ff179e00a454da8441cc1b6c3d261f, 9d5e4c35f59fcb4edd3fa4d47a453bbc1cf2aff1, e227f1d600c0c2f7115775f5cb748805677db57d, cf79537f0a504c116ee3cfb854bd58a70089edc0
 folderfilter = lambda foldername: foldername not in [
                    '[Gmail]/All Mail',
                    '[Gmail]/Important',
