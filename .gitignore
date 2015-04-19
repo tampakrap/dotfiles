@@ -5,6 +5,7 @@
 .gnupg/random_seed
 .gnupg/crls.d
 .gnupg/pubring.kbx*
+.gnupg/openpgp-revocs.d/
 .imapfilter/certificates
 .noipupdater/log
 .noipupdater/cache
