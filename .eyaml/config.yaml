@@ -1,0 +1,4 @@
+---
+encrypt_method: 'gpg'
+gpg_gnupghome: '~/.gnupg'
+gpg_recipients: 'tampakrap@gmail.com,dastergon@gmail.com,puppet@odb.forkbomb.gr'
