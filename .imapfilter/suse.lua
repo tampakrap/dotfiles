@@ -42,7 +42,7 @@ end
 
 suse_list = function (list_prefix)
     list = list_prefix .. '@suse\\.' .. get_domain(list_prefix, {'cz', 'ops', 'talk-cz'})
-    return suse_unseen:match_field('X-BeenThere', list)
+    return suse_unseen:match_field('X-BeenThere', '^' .. list .. '$')
 end
 
 
@@ -105,6 +105,7 @@ redmine_project('opensuse-admin-puppet'):move_messages(suse['logs/progress/puppe
 redmine_project('backup'):move_messages(suse['logs/redmine/backup'])
 redmine_project('monitoring'):move_messages(suse['logs/redmine/monitoring'])
 redmine_project('mla'):move_messages(suse['logs/redmine/morla'])
+redmine_project('ops-services'):move_messages(suse['logs/redmine/ops-services'])
 redmine_project('infra-prague'):move_messages(suse['logs/redmine/prague'])
 redmine_project('security'):move_messages(suse['logs/redmine/security'])
 redmine_project('storage'):move_messages(suse['logs/redmine/storage'])
