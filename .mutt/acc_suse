@@ -3,7 +3,6 @@ set postponed = +Drafts
 set from = "tchatzimichos@suse.com"
 set hostname = "suse.com"
 set record = +Sent
-
-#set signature = ~/.mutt/signature
+set signature = ~/.mutt/signature_suse
 
 # vim: ft=muttrc
