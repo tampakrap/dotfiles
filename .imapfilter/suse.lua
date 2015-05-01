@@ -48,7 +48,7 @@ end
 
 infra_rt = function (to)
     domain = get_domain(to, {'prague'})
-    return infra_rt_all:match_field('Reply-To', to .. '(-comment)?@suse\\.' .. domain) + suse_unseen:contain_from(to .. '@suse.' .. domain)
+    return infra_rt_all:match_field('Reply-To', to .. '(-(messages|comment))?@suse\\.' .. domain) + suse_unseen:contain_from(to .. '@suse.' .. domain)
 end
 
 
@@ -56,7 +56,7 @@ redmine_project = function (project)
     return suse_unseen:match_field('X-Redmine-Project', '^' .. project .. '$')
 end
 
-
+suse:delete_mailbox('lists/suse/qa-reports')
 suse_unseen:match_field('X-Spam-Flag', 'YES'):move_messages(suse['Spam'])
 opensuse_list('opensuse-announce'):move_messages(suse['lists/opensuse'])
 opensuse_list('gsoc-mentors'):move_messages(suse['lists/opensuse/gsoc-mentors'])
@@ -71,13 +71,15 @@ suse_list('opensuse-internal'):move_messages(suse['lists/suse/opensuse-internal'
 suse_list('openvpn-info'):move_messages(suse['lists/suse/openvpn-info'])
 suse_list('ops'):move_messages(suse['lists/suse/ops'])
 infra = suse_list('ops-services')
-infra_logs = infra:match_from('netapp01@suse\\.de') + infra:match_to('rd-adm-svn@suse.de')
+infra_logs = infra:match_from('(netapp0[1-2]|rt-count)@suse\\.de|asupprod@netapp\\.com') + infra:match_to('rd-adm-svn@suse.de')
 infra_logs:move_messages(suse['logs/infra'])
 infra_rt_all = infra:match_field('X-RT-Loop-Prevention', 'SUSE Ticket')
 infra_rt('archticket'):move_messages(suse['logs/rt/arch'])
 infra_rt('infra'):move_messages(suse['logs/rt/infra'])
 infra_rt('openvpn'):move_messages(suse['logs/rt/openvpn'])
 infra_rt('prague'):move_messages(suse['logs/rt/prague'])
+infra_rt('s390ticket'):move_messages(suse['logs/rt/s390'])
+infra_rt('system'):move_messages(suse['logs/rt/system'])
 infra:move_messages(suse['lists/suse/ops-services'])
 suse_list('qa-maintenance'):move_messages(suse['lists/suse/qa-maintenance'])
 suse_list('qa-maintenance-reports'):move_messages(suse['lists/suse/qa-maintenance-reports'])
@@ -103,6 +105,7 @@ obs_sr:move_messages(suse['logs/obs/sr'])
 redmine_project('opensuse-admin'):move_messages(suse['logs/progress/opensuse-admin'])
 redmine_project('opensuse-admin-puppet'):move_messages(suse['logs/progress/puppet'])
 redmine_project('backup'):move_messages(suse['logs/redmine/backup'])
+redmine_project('infrastructure'):move_messages(suse['logs/redmine/infrastructure'])
 redmine_project('monitoring'):move_messages(suse['logs/redmine/monitoring'])
 redmine_project('mla'):move_messages(suse['logs/redmine/morla'])
 redmine_project('ops-services'):move_messages(suse['logs/redmine/ops-services'])
