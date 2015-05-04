@@ -2,7 +2,7 @@ export COLORTERM=yes
 export CC=gcc
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
-[[ $HOSTNAME == 'rakim' ]] && export LC_ALL="cs_CZ.UTF-8" LANG="cs_CZ.UTF-8"
+case $HOSTNAME in rakim|virtuoso) export LC_ALL="cs_CZ.UTF-8" LANG="cs_CZ.UTF-8" ;; esac
 
 [ -f /etc/DIR_COLORS ] && eval $(dircolors -b /etc/DIR_COLORS)
 export ZLSCOLORS="${LS_COLORS}"
@@ -75,7 +75,7 @@ function grt () {
 if [[ $UID != 0 ]]; then
     PLUGINS=(git hg jump osc virtualenv keychain)
     KEYCHAIN_USER=(tampakrap 'Theo Chatzimichos <tampakrap@gentoo.org>')
-    WORKSTATIONS=(guru rakim virtuoso xzibit rakim)
+    WORKSTATIONS=(guru rakim virtuoso xzibit)
     KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
 
     for plugin in ${PLUGINS[@]}; do
