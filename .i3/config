@@ -130,8 +130,8 @@ bindsym $mod+$alt+Y border 1pixel
 bindsym $mod+$alt+U border none
 
 # Screen auto-locking and auto-suspend
-bindsym XF86LaunchB exec "i3lock -i /home/tampakrap/Pictures/lock.png"
-exec xautolock -time 5 -locker "i3lock -i /home/tampakrap/Pictures/lock.png"
+bindsym XF86LaunchB exec "i3lock -t -i /home/tampakrap/Pictures/lock.png"
+exec xautolock -time 5 -locker "i3lock -t -i /home/tampakrap/Pictures/lock.png"
 
 # print screen
 bindsym XF86LaunchA exec "scrot Pictures/screenshots/%Y-%m-%d-%H%M%S.png"
@@ -168,7 +168,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "quit" {
-    bindsym l exec --no-startup-id "i3lock -i /home/tampakrap/Pictures/lock.png", mode "default"
+    bindsym l exec --no-startup-id "i3lock -t -i /home/tampakrap/Pictures/lock.png", mode "default"
     bindsym e exec --no-startup-id "sudo systemctl restart display-manager", mode "default"
     bindsym s exec --no-startup-id "systemctl suspend", mode "default"
     bindsym r exec --no-startup-id "systemctl reboot", mode "default"
@@ -180,7 +180,7 @@ mode "quit" {
 bindsym $mod+q mode "quit"
 
 mode "lock" {
-    bindsym e exec --no-startup-id "xautolock -time 5 -locker 'i3lock -i /home/tampakrap/Pictures/lock.png' & ; xset s 180 180", mode "default"
+    bindsym e exec --no-startup-id "xautolock -time 5 -locker 'i3lock -t -i /home/tampakrap/Pictures/lock.png' & ; xset s 180 180", mode "default"
     bindsym d exec --no-startup-id "killall xautolock; xset s off off", mode "default"
 
     bindsym Return mode "default"
