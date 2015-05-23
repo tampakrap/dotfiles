@@ -5,6 +5,7 @@ set menu_scroll = yes
 set simple_search = "~f %s | ~C %s | ~s %s"
 set sort = threads
 set pager_format = " %C - %[%H:%M] %.20v, %s%* %?H? [%H] ?"
+set index_format= "%Z %{%Y %b %e  %H:%M} %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
 set mbox_type = Maildir
 set mail_check = 1
 set folder = ~/.Mail
@@ -16,8 +17,8 @@ set realname = "Theo Chatzimichos"
 set sendmail = /usr/bin/msmtp
 set use_envelope_from = yes
 mailboxes `for dir in $(ls ~/.Mail); do echo -n "'+=== $dir ===' "; ls ~/.Mail/$dir | sed -e 's/ /##/' | LC_ALL=C sort | sed -r "s#([^ ]+)#=\"$dir/\1\"#g" | tr '\n' ' ' | sed -e 's/##/ /'; done`
-alternates "t(ampakrap|(heo(doros)?[@.])?chatzimichos)(@(g(mail|entoo(-el)?)|(open)?suse|(cronos|linuxteam(\.cs)?)\.teilar))?\.(com|org|gr|de|cz)"
-subscribe "(gentoo-[a-z\-]+@(lists)?\.gentoo|(opensuse-[a-z\-]+|gsoc-mentors)@opensuse)\.org|g(oogle-summer-of-code|soc-mentors)-announce@googlegroups\.com"
+alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
+subscribe "(gentoo-[a-z\-]+@lists\.gentoo|(opensuse-[a-z\-]+|gsoc-mentors)@opensuse)\.org|g(oogle-summer-of-code|soc-mentors)-announce@googlegroups\.com|(devel|hackweek|maso|opensuse-internal|openvpn-info|ops|ops-services|research|results|(talk-)?cz|users)@suse\.(cz|de)"
 
 ignore          *
 unignore        From: To: Cc: Bcc: Date: Subject:
