@@ -30,7 +30,7 @@ gentoo_unseen:match_field('X-BeenThere', 'gentoo-foundation-announce@lists\\.gen
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-soc@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-soc'])
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-user-cs@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-user-cs'])
 gentoo_unseen:match_field('X-BeenThere', 'gentoo-user-el@lists\\.gentoo\\.org'):move_messages(gentoo['lists/gentoo-user-el'])
-logs = gentoo_unseen:match_from('(g(archives|cvsd-rsync|infrastatus|web|mirror|qa|packages|planet|itolite)|root|apache|MAILER-DAEMON|nobody)@gentoo\\.org'):match_to('(root|gweb|infra-automated-retire|recruiters|planet)@gentoo\\.org') + gentoo_unseen:contain_from('root@osprey.gentoo.org'):contain_to('root') + gentoo_unseen:match_from('ipmi@b(ittern|obolink)\\.gentoo\\.oob') + gentoo_unseen:contain_to('root@gentoo.org'):match_subject('[*]{3} SECURITY information for [a-z]+ [*]{3}') + gentoo_unseen:contain_from('elections@gentoo.org'):contain_to('tampakrap@gentoo.org')
+logs = gentoo_unseen:match_from('(g(archives|cvsd-rsync|devmanual|infrastatus|web|mirror|qa|packages|planet|itolite)|root|apache|MAILER-DAEMON|nobody)@gentoo\\.org'):match_to('(root|gweb|infra-automated-retire|recruiters|planet)@gentoo\\.org') + gentoo_unseen:contain_from('root@osprey.gentoo.org'):contain_to('root') + gentoo_unseen:match_from('ipmi@b(ittern|obolink)\\.gentoo\\.oob') + gentoo_unseen:contain_to('root@gentoo.org'):match_subject('[*]{3} SECURITY information for [a-z]+ [*]{3}') + gentoo_unseen:contain_from('elections@gentoo.org'):contain_to('tampakrap@gentoo.org')
 logs:move_messages(gentoo['logs'])
 blogs = gentoo_unseen:contain_from('wordpress@blogs.gentoo.org')
 myblog = blogs:contain_subject('[the purple greeko]')

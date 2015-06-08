@@ -30,7 +30,7 @@ end
 
 
 opensuse_list = function (list_prefix)
-    list = list_prefix .. '@opensuse.org'
+    list = '^' .. list_prefix .. '@opensuse.org$'
     list_mine = suse_unseen:contain_from('tampakrap@opensuse.org')
     return suse_unseen:contain_field('X-Mailinglist', list_prefix) +
            suse_unseen:contain_to('tampakrap@opensuse.org'):contain_cc(list) +
@@ -63,10 +63,14 @@ end
 
 
 suse_unseen:match_field('X-Spam-Flag', 'YES'):move_messages(suse['Spam'])
-opensuse_list('opensuse-announce'):move_messages(suse['lists/opensuse'])
 opensuse_list('gsoc-mentors'):move_messages(suse['lists/opensuse/gsoc-mentors'])
+opensuse_list('opensuse-announce'):move_messages(suse['lists/opensuse/opensuse-announce'])
 opensuse_list('opensuse-cz'):move_messages(suse['lists/opensuse/opensuse-cz'])
 opensuse_list('opensuse-el'):move_messages(suse['lists/opensuse/opensuse-el'])
+opensuse_list('opensuse-project'):move_messages(suse['lists/opensuse/opensuse-project'])
+opensuse_list('opensuse-security-announce'):move_messages(suse['lists/opensuse/opensuse-security-announce'])
+opensuse_list('opensuse-security'):move_messages(suse['lists/opensuse/opensuse-security'])
+opensuse_list('opensuse-updates'):move_messages(suse['lists/opensuse/opensuse-updates'])
 suse_list('cz'):move_messages(suse['lists/suse/cz'])
 suse_list('devel'):move_messages(suse['lists/suse/devel'])
 suse_list('hackweek'):move_messages(suse['lists/suse/hackweek'])
@@ -75,7 +79,7 @@ suse_list('opensuse-internal'):move_messages(suse['lists/suse/opensuse-internal'
 suse_list('openvpn-info'):move_messages(suse['lists/suse/openvpn-info'])
 suse_list('ops'):move_messages(suse['lists/suse/ops'])
 infra = suse_list('ops-services')
-infra_logs = opensuse_list('admin-auto') + infra:match_from('(netapp0[1-2]|rt-count)@suse\\.de|asupprod@netapp\\.com') + infra:match_to('rd-adm-svn@suse\\.de')
+infra_logs = opensuse_list('admin-auto') + infra:match_from('(netapp0[1-2]|rt-count)@suse\\.de|netapp0[5-6]@suse\\.cz|asupprod@netapp\\.com|ShipmentNotificationDVOnline@intel\\.com') + infra:match_to('rd-adm-svn@suse\\.de')
 infra_logs:move_messages(suse['logs/infra'])
 infra:contain_from('gitlab@opensuse.org'):move_messages(suse['logs/gitlab'])
 infra_rt_all = infra:match_field('X-RT-Loop-Prevention', '(SUSE Ticket|RT-ADM)')
@@ -90,7 +94,7 @@ suse_list('research'):move_messages(suse['lists/suse/research'])
 suse_list('results'):move_messages(suse['lists/suse/results'])
 suse_list('talk-cz'):move_messages(suse['lists/suse/talk-cz'])
 suse_list('users'):move_messages(suse['lists/suse/users'])
-logs = suse_unseen:match_from('(istdirteam|GWAVA|webmaster)@novell\\.com|(swamp|orthos)_noreply@suse\\.de|helpdesk@netiq\\.com') + suse_unseen:match_from('maint-coord@(novell\\.com|suse\\.de)'):match_subject('Maintenance QA (SLA|KPI) watchdog report - [0-9]{8}')
+logs = suse_unseen:match_from('(istdirteam|GWAVA|webmaster)@novell\\.com|(swamp|orthos)_noreply@suse\\.de|helpdesk@netiq\\.com|support@ovationincentives\\.com') + suse_unseen:match_from('maint-coord@(novell\\.com|suse\\.de)'):match_subject('Maintenance QA (SLA|KPI) watchdog report - [0-9]{8}')
 logs:move_messages(suse['logs'])
 suse_unseen:match_from('[Bb]ugzilla_[Nn]o[Rr]eply@novell\\.com'):match_to('tampakrap@opensuse\\.org|tchatzimichos@suse\\.c(om|z)'):move_messages(suse['logs/bugzilla'])
 github = suse_unseen:match_from('((noreply|support|notifications)@github|(notifications|builds)@travis-ci)\\.com') + suse_unseen:contain_field('X-GitHub-Recipient', 'tampakrap')
