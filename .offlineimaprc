@@ -26,7 +26,7 @@ remotehost = mail.gentoo.org
 remoteuser = tampakrap
 remotepasseval = get_passeval('gentoo')
 ssl = yes
-cert_fingerprint = f3bb778e3145c7ef7ff9a97cf668b900fce4754c
+sslcacertfile = /etc/ssl/ca-bundle.pem
 remoteport = 993
 
 [Account gmail]
@@ -66,6 +66,7 @@ remotehost = imap.suse.de
 remoteuser = tchatzimichos
 remotepasseval = get_passeval('suse')
 ssl = yes
+sslcacertfile = /etc/ssl/ca-bundle.pem
 remoteport = 993
 nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
 
