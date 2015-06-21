@@ -14,4 +14,4 @@ urxvtd-256color -q -o -f
 sh ~/.fehbg &
 xset s 180 180
 case $HOSTNAME in guru|rakim|virtuoso) syndaemon -t -k -i 2 -d ;; esac
-exec /usr/bin/i3
+case $HOSTNAME in rakim|virtuoso) LC_ALL="cs_CZ.UTF-8" exec /usr/bin/i3 ;;esac
