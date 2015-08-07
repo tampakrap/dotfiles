@@ -2,7 +2,7 @@ set folder = ~/.Mail/suse
 set postponed = +Drafts
 set from = "tchatzimichos@suse.com"
 set hostname = "suse.com"
-set record = +Sent
+set record = +Sent\ Items
 set signature = ~/.mutt/signature_suse
 
 # vim: ft=muttrc

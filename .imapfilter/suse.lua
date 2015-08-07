@@ -1,10 +1,10 @@
 dofile("/home/tampakrap/.imapfilter/common.lua")
 
-status, password = pipe_from('~/bin/getmailpass.py suse')
+status, password = pipe_from('~/bin/getmailpass.py novell')
 password = password.gsub(password, ' ', '').gsub(password, '\n', '')
 
 suse = IMAP {
-    server = 'imap.suse.de',
+    server = 'mail.microfocus.com',
     username = 'tchatzimichos',
     password = password,
     ssl = 'tls1.3',
@@ -97,7 +97,7 @@ suse_list('talk-cz'):move_messages(suse['lists/suse/talk-cz'])
 suse_list('users'):move_messages(suse['lists/suse/users'])
 logs = suse_unseen:match_from('HelpDesk@attachmategroup.com|((istdirteam|GWAVA|webmaster|pwnotify)@|(psoft@(sybok|sarek)|WF-BATCH@eccprd1)\\.provo\\.)novell\\.com|(swamp|orthos)_noreply@suse\\.de|helpdesk@netiq\\.com|support@ovationincentives\\.com') + suse_unseen:match_from('maint-coord@(novell\\.com|suse\\.de)'):match_subject('Maintenance QA (SLA|KPI) watchdog report - [0-9]{8}')
 logs:move_messages(suse['logs'])
-suse_unseen:match_from('[Bb]ugzilla_[Nn]o[Rr]eply@novell\\.com'):match_to('tampakrap@opensuse\\.org|tchatzimichos@suse\\.c(om|z)'):move_messages(suse['logs/bugzilla'])
+suse_unseen:match_from('[Bb]ugzilla_[Nn]o[Rr]eply@novell\\.com'):match_to('tampakrap@opensuse\\.org|tchatzimichos@(microfocus\\.com|suse\\.c(om|z))'):move_messages(suse['logs/bugzilla'])
 github = suse_unseen:match_from('((noreply|support|notifications)@github|(notifications|builds)@travis-ci)\\.com') + suse_unseen:contain_field('X-GitHub-Recipient', 'tampakrap')
 github:move_messages(suse['logs/github'])
 suse_unseen:match_from('gitlab@(opensuse\\.org|suse\\.de)'):move_messages(suse['logs/gitlab'])
@@ -118,4 +118,4 @@ progress_issues():match_field('X-Redmine-Project', '^opensuse-admin-puppet$'):mo
 progress_issues():move_messages(suse['logs/progress'])
 progress:move_messages(suse['logs'])
 suse_unseen:match_from('.*@rsm-tacoma.cz'):move_messages(suse['logs/rsm-tacoma'])
-suse_unseen:match_to('DL-(Prague|TAG|SU|MicroFocusInternational)-(A[lL]{2}|EMPLOYEES|Employees|Office)(\\.iList\\.INTERNET)?@ilist\\.attachmategroup\\.com'):move_messages(suse['newsletters'])
+suse_unseen:match_to('DL-(Prague|TAG|SU(-ALLFY16)?|MicroFocusInternational|MICROFOCUSINTERNATIONAL)(-(A[lL]{2}|EMPLOYEES|Employees|Office))?(\\.iList\\.INTERNET)?@ilist\\.attachmategroup\\.com'):move_messages(suse['newsletters'])

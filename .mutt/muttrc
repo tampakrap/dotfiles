@@ -16,7 +16,7 @@ set mailcap_path = ~/.mutt/mailcap
 set realname = "Theo Chatzimichos"
 set sendmail = /usr/bin/msmtp
 set use_envelope_from = yes
-mailboxes `for dir in $(ls ~/.Mail); do echo -n "'+=== $dir ===' "; ls ~/.Mail/$dir | sed -e 's/ /##/' | LC_ALL=C sort | sed -r "s#([^ ]+)#=\"$dir/\1\"#g" | tr '\n' ' ' | sed -e 's/##/ /'; done`
+mailboxes `for dir in $(ls ~/.Mail); do echo -n "'+=== $dir ===' "; ls ~/.Mail/$dir | sed -e 's/ /##/' | LC_ALL=C sort | sed -r "s#([^ ]+)#=\"$dir/\1\"#g" | tr '\n' ' ' | sed -e 's/##/ /g'; done`
 alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
 subscribe "(gentoo-[a-z\-]+@lists\.gentoo|(opensuse-[a-z\-]+|gsoc-mentors)@opensuse)\.org|g(oogle-summer-of-code|soc-mentors)-announce@googlegroups\.com|(devel|hackweek|maso|opensuse-internal|openvpn-info|ops|ops-services|research|results|(talk-)?cz|users)@suse\.(cz|de)"
 
