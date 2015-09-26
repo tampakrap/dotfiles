@@ -71,5 +71,5 @@ remoteport = 993
 #nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
 folderfilter = lambda foldername: foldername not in ['Tasks', 'Contacts',
                    'Frequent Contacts', 'Journal', 'Theodoros Chatzimichos',
-                   'Notes', 'Cabinet', 'Calendar', 'lists', 'lists.opensuse',
-                   'lists.suse',]
+                   'Notes', 'Cabinet', 'Calendar', 'lists', 'lists/opensuse',
+                   'lists/suse', 'logs/ibs', 'logs/obs', 'logs/rt',]
