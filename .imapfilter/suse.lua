@@ -1,10 +1,10 @@
 dofile("/home/tampakrap/.imapfilter/common.lua")
 
-status, password = pipe_from('~/bin/getmailpass.py novell')
+status, password = pipe_from('~/bin/getmailpass.py suse')
 password = password.gsub(password, ' ', '').gsub(password, '\n', '')
 
 suse = IMAP {
-    server = 'mail.microfocus.com',
+    server = 'imap.suse.de',
     username = 'tchatzimichos',
     password = password,
     ssl = 'tls1.3',

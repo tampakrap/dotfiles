@@ -58,18 +58,33 @@ quick = 0
 [Repository local_suse]
 type = Maildir
 localfolders = ~/.Mail/suse
-#nametrans = lambda folder: folder if folder == 'INBOX' else 'INBOX.' + folder
+nametrans = lambda folder: folder if folder == 'INBOX' else 'INBOX.' + folder
 
 [Repository remote_suse]
 type = IMAP
-remotehost = mail.microfocus.com
+remotehost = imap.suse.de
+remoteuser = tchatzimichos
+remotepasseval = get_passeval('suse')
+ssl = yes
+sslcacertfile = /etc/ssl/ca-bundle.pem
+remoteport = 993
+nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
+
+[Account ex_suse]
+localrepository = ex_local_suse
+remoterepository = ex_remote_suse
+autorefresh = 10
+quick = 0
+
+[Repository ex_local_suse]
+type = Maildir
+localfolders = ~/.Mail/novell
+
+[Repository ex_remote_suse]
+type = IMAP
+remotehost = gwmail.emea.novell.com
 remoteuser = tchatzimichos
 remotepasseval = get_passeval('novell')
 ssl = yes
 sslcacertfile = /etc/ssl/ca-bundle.pem
 remoteport = 993
-#nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
-folderfilter = lambda foldername: foldername not in ['Tasks', 'Contacts',
-                   'Frequent Contacts', 'Journal', 'Theodoros Chatzimichos',
-                   'Notes', 'Cabinet', 'Calendar', 'lists', 'lists/opensuse',
-                   'lists/suse', 'logs/ibs', 'logs/obs', 'logs/rt',]
