@@ -22,16 +22,16 @@ download_rate = 1773
 upload_rate = 90
 
 # Default directory to save the downloaded torrents.
-directory = ~/.rtorrent/incomplete
+directory = /home/tampakrap/.rtorrent/incomplete
 
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = ~/.rtorrent/session
+session = /home/tampakrap/.rtorrent/session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,"load_start=~/.rtorrent/watch/*.torrent,\"d.set_custom=target,~/Downloads\""
+schedule = watch_directory,5,5,"load_start=/home/tampakrap/.rtorrent/watch/*.torrent,\"d.set_custom=target,/home/tampakrap/Downloads\""
 schedule = untied_directory,5,5,stop_untied=
 
 # Move completed torrents from ~/.rtorrent/incomplete to ~/Downloads
