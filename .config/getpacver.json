@@ -1,0 +1,91 @@
+{
+    "benchmark": [
+        "forkbomb"
+    ],
+    "devel:languages:python": [
+        "python-django-auth-ldap",
+        "python-django-international",
+        "python-mockldap",
+        "salt",
+        "python-salt-testing"
+    ],
+    "devel:languages:ruby:extensions": [
+        "rubygem-colored",
+        "rubygem-cri",
+        "rubygem-deep_merge",
+        "rubygem-faraday",
+        "rubygem-faraday_middleware",
+        "rubygem-faraday_middleware-multi_json",
+        "rubygem-gpgme",
+        "rubygem-hub",
+        "rubygem-json_pure",
+        "rubygem-log4r",
+        "rubygem-multi_json",
+        "rubygem-ruby-augeas",
+        "rubygem-studio_api",
+        "rubygem-trollop"
+    ],
+    "devel:libraries:c_c++": [
+        "augeas"
+    ],
+    "devel:tools:building": [
+        "colorgcc",
+        "colormake"
+    ],
+    "devel:tools:scm:svn": [
+        "python-svneverever",
+        "svn2git"
+    ],
+    "home:sleep_walker:gentoo": [
+        "eix",
+        "gentoolkit-dev",
+        "gentoo-syntax",
+        "gentoo-zsh-completions",
+        "portage-utils",
+        "python-gentoolkit",
+        "python-portage",
+        "python-snakeoil",
+        "sandbox"
+    ],
+    "network:utilities": [
+        "libtorrent",
+        "nmcli-dmenu",
+        "rtorrent"
+    ],
+    "security:privacy": [
+        "password-store",
+        "python-pass_python_keyring"
+    ],
+    "server:irc": [
+        "bitlbee"
+    ],
+    "utilities": [
+        "pmount",
+        "uam"
+    ],
+    "systemsmanagement:puppet": [
+        "mcollective",
+        "puppetdb",
+        "python-puppetboard",
+        "python-pypuppetdb",
+        "rubygem-facter",
+        "rubygem-hiera",
+        "rubygem-hiera-eyaml",
+        "rubygem-hiera-eyaml-gpg",
+        "rubygem-puppet",
+        "rubygem-puppet_forge",
+        "rubygem-puppet-lint",
+        "rubygem-r10k",
+        "rubygem-semantic_puppet"
+    ],
+    "Virtualization": [
+        "virt-what"
+    ],
+    "X11:Utilities": [
+        "urxvt-font-size",
+        "urxvt-perls",
+        "urxvt-tabbedex",
+        "xautolock",
+        "xxkb"
+    ]
+}
