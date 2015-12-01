@@ -22,6 +22,7 @@
         "rubygem-log4r",
         "rubygem-multi_json",
         "rubygem-ruby-augeas",
+        "rubygem-ruby-libvirt",
         "rubygem-studio_api",
         "rubygem-trollop"
     ],
