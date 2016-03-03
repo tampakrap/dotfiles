@@ -6,6 +6,7 @@
 .gnupg/crls.d
 .gnupg/pubring.kbx*
 .gnupg/openpgp-revocs.d/
+.gnupg/.#*
 .imapfilter/certificates
 .noipupdater/log
 .noipupdater/cache
