@@ -5,9 +5,7 @@
     "devel:languages:python": [
         "python-django-auth-ldap",
         "python-django-international",
-        "python-mockldap",
-        "salt",
-        "python-salt-testing"
+        "python-mockldap"
     ],
     "devel:languages:ruby:extensions": [
         "rubygem-colored",
@@ -65,7 +63,6 @@
         "uam"
     ],
     "systemsmanagement:puppet": [
-        "mcollective",
         "puppetdb",
         "python-puppetboard",
         "python-pypuppetdb",
@@ -73,11 +70,16 @@
         "rubygem-hiera",
         "rubygem-hiera-eyaml",
         "rubygem-hiera-eyaml-gpg",
+        "rubygem-mcollective",
         "rubygem-puppet",
         "rubygem-puppet_forge",
         "rubygem-puppet-lint",
         "rubygem-r10k",
         "rubygem-semantic_puppet"
+    ],
+    "systemsmanagement:saltstack": [
+        "salt",
+        "python-salt-testing"
     ],
     "Virtualization": [
         "virt-what"
