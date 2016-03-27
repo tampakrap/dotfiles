@@ -15,7 +15,7 @@ alias git="hub"
 alias facepalm="cat ~/.zsh/facepalm"
 alias :q="facepalm"
 alias :wq="facepalm"
-alias weechat="WEECHAT_PASSPHRASE=\$(pass tampakrap.gr/rakim/weechat) weechat"
+alias weechat="WEECHAT_PASSPHRASE=\$(pass forkbomb.gr/rakim/weechat) weechat"
 alias todo="edit ~/Documents/todo"
 alias nmrestart="for stat in off on; do nmcli n \$stat; done"
 
