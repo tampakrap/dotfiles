@@ -58,7 +58,7 @@ quick = 0
 [Repository local_suse]
 type = Maildir
 localfolders = ~/.Mail/suse
-nametrans = lambda folder: folder if folder == 'INBOX' else 'INBOX.' + folder
+nametrans = lambda folder: folder if folder == 'INBOX' else 'INBOX/' + folder
 
 [Repository remote_suse]
 type = IMAP
@@ -68,7 +68,7 @@ remotepasseval = get_passeval('suse')
 ssl = yes
 sslcacertfile = /etc/ssl/ca-bundle.pem
 remoteport = 993
-nametrans = lambda folder: re.sub('^INBOX\.', '', folder)
+nametrans = lambda folder: re.sub('^INBOX\/', '', folder)
 
 [Account ex_suse]
 localrepository = ex_local_suse
