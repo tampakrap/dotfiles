@@ -63,6 +63,11 @@
         "python-svneverever",
         "svn2git"
     ],
+    "home:darix:apps": [
+        "gitlab-ci-multi-runner",
+        "gitlab-shell",
+        "gitlab-workhorse"
+    ],
     "home:sleep_walker:gentoo": [
         "eix",
         "gentoolkit-dev",
@@ -73,6 +78,9 @@
         "python-portage",
         "python-snakeoil",
         "sandbox"
+    ],
+    "home:tampakrap:forkbomb": [
+        "gitlab-ce"
     ],
     "network:utilities": [
         "libtorrent",
@@ -85,6 +93,9 @@
     ],
     "server:irc": [
         "bitlbee"
+    ],
+    "server:php:applications": [
+        "wordpress"
     ],
     "utilities": [
         "pmount",
