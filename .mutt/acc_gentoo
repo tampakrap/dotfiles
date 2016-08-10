@@ -4,6 +4,6 @@ set from = "tampakrap@gentoo.org"
 set hostname = "gentoo.org"
 set record = +sent
 
-#set signature = ~/.mutt/signature
+unset signature
 
 # vim: ft=muttrc

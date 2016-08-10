@@ -4,6 +4,6 @@ set from = "tampakrap@gmail.com"
 set hostname = "gmail.com"
 unset record
 
-#set signature = ~/.mutt/signature
+unset signature
 
 # vim: ft=muttrc

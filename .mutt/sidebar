@@ -1,6 +1,7 @@
 set sidebar_visible = yes
 set sidebar_width = 42
 set sidebar_short_path = yes
+set sidebar_folder_indent = no
 set sidebar_delim_chars = '/'
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
@@ -8,5 +9,6 @@ bind index,pager \CO sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index B bounce-message
+color sidebar_new yellow default
 
 # vim: ft=muttrc
