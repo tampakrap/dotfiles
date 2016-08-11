@@ -63,8 +63,10 @@ end
 
 
 suse_unseen:match_field('X-Spam-Flag', 'YES'):move_messages(suse['Spam'])
+opensuse_list('admin-auto'):move_messages(suse['lists/opensuse/admin-auto'])
 opensuse_list('gsoc-mentors'):move_messages(suse['lists/opensuse/gsoc-mentors'])
 opensuse_list('heroes'):move_messages(suse['lists/opensuse/heroes'])
+opensuse_list('mirror'):move_messages(suse['lists/opensuse/mirror'])
 opensuse_list('opensuse-announce'):move_messages(suse['lists/opensuse/opensuse-announce'])
 opensuse_list('opensuse-conference'):move_messages(suse['lists/opensuse/opensuse-conference'])
 opensuse_list('opensuse-cz'):move_messages(suse['lists/opensuse/opensuse-cz'])
@@ -86,7 +88,7 @@ suse_list('opensuse-internal'):move_messages(suse['lists/suse/opensuse-internal'
 suse_list('openvpn-info'):move_messages(suse['lists/suse/openvpn-info'])
 suse_list('ops'):move_messages(suse['lists/suse/ops'])
 infra = suse_list('ops-services')
-infra_logs = opensuse_list('admin-auto') + infra:match_from('((netapp0[1-2]|rt-count)@suse|root@crick.suse)\\.de|netapp0[5-6]@suse\\.cz|(asupprod@netapp|ShipmentNotificationDVOnline@intel)\\.com') + infra:match_to('rd-adm-svn@suse\\.de') + suse_unseen:match_from('(scz-probe[1-3]@(suse|novell)\\.com|wwwrun@gaston\\.opensuse\\.org)|keepalived@(sparta|slavia)\\.suse\\.cz')
+infra_logs = infra:match_from('((netapp0[1-2]|rt-count)@suse|root@crick.suse)\\.de|netapp0[5-6]@suse\\.cz|(asupprod@netapp|ShipmentNotificationDVOnline@intel)\\.com') + infra:match_to('rd-adm-svn@suse\\.de') + suse_unseen:match_from('scz-probe[1-3]@(suse|novell)\\.com|keepalived@(sparta|slavia)\\.suse\\.cz')
 infra_logs:move_messages(suse['logs/infra'])
 infra:match_from('gitlab@opensuse\\.org'):move_messages(suse['logs/gitlab'])
 infra_rt_all = infra:match_field('X-RT-Loop-Prevention', '(SUSE Ticket|RT-ADM)')
