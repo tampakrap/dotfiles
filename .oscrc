@@ -120,7 +120,7 @@ email = tampakrap@opensuse.org
 #pass =
 # Force using of keyring for this API
 #keyring = 1
-trusted_prj=openSUSE:Factory openSUSE:13.2 openSUSE:13.1 openSUSE:12.3 network:utilities systemsmanagement:puppet devel:languages:ruby SUSE:SLE-11:SP3 devel:languages:ruby:backports devel:languages:python SUSE:SLE-12:GA
+trusted_prj=openSUSE:Factory openSUSE:13.2 openSUSE:13.1 openSUSE:12.3 network:utilities systemsmanagement:puppet devel:languages:ruby SUSE:SLE-11:SP3 devel:languages:ruby:backports devel:languages:python SUSE:SLE-12:GA systemsmanagement:saltstack openSUSE:Leap:42.1 server:php:applications
 
 [https://api.suse.de]
 user = tampakrap
@@ -128,4 +128,4 @@ user = tampakrap
 aliases = suse
 # email used in .changes, unless the one from osc meta prj <user> will be used
 email = tchatzimichos@suse.com
-trusted_prj = openSUSE.org:openSUSE:Factory
+trusted_prj = openSUSE.org:openSUSE:Factory SUSE:SLE-12:GA
