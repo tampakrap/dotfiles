@@ -11,5 +11,8 @@
 	lb = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ad) %C(bold blue)%an <%ae>%Creset %n %b'
 	forkbomb = gitlab merge $(git rev-parse --abbrev-ref HEAD) production
 	merge-request = gitlab merge $(git rev-parse --abbrev-ref HEAD)
+	merge-request2 = !git gitlab merge $(git rev-parse --abbrev-ref HEAD)
+	mr-master = !git gitlab merge $(git rev-parse --abbrev-ref HEAD) master
+	mr = !git gitlab merge $(git rev-parse --abbrev-ref HEAD) production
 [core]
 	excludesfile = /home/tampakrap/.gitignore_global
