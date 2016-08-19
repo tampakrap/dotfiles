@@ -41,6 +41,7 @@
         "rubygem-omniauth-google-oauth2",
         "rubygem-posix-spawn",
         "rubygem-rails-bootstrap-markdown",
+        "rubygem-rgen",
         "rubygem-rolify",
         "rubygem-ruby-augeas",
         "rubygem-ruby-libvirt",
