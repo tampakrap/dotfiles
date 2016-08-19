@@ -1,0 +1,46 @@
+# RabbitMQ connector settings
+connector = rabbitmq
+direct_addressing = 1
+plugin.rabbitmq.pool.size = 1
+plugin.rabbitmq.vhost = /mcollective
+plugin.rabbitmq.pool.1.host = odb.forkbomb.gr
+plugin.rabbitmq.pool.1.port = 61614
+plugin.rabbitmq.pool.1.user = tampakrap
+plugin.rabbitmq.pool.1.ssl = 1
+plugin.rabbitmq.pool.1.ssl.ca = /home/tampakrap/.mcollective.d/ssl/puppetca.forkbomb.gr.pem
+plugin.rabbitmq.pool.1.ssl.cert = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/clients/tampakrap.mcollective.forkbomb.gr.pem
+plugin.rabbitmq.pool.1.ssl.key = /home/tampakrap/.mcollective.d/ssl/tampakrap.mcollective.forkbomb.gr.pem
+plugin.rabbitmq.initial_reconnect_delay = 0.01
+plugin.rabbitmq.max_reconnect_delay = 30.0
+plugin.rabbitmq.use_exponential_back_off = true
+plugin.rabbitmq.back_off_multiplier = 2
+plugin.rabbitmq.max_reconnect_attempts = 0
+plugin.rabbitmq.randomize = false
+plugin.rabbitmq.timeout = -1
+
+# SSL security plugin settings
+securityprovider = ssl
+plugin.ssl_server_public = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/servers.mcollective.forkbomb.gr.pem
+plugin.ssl_client_private = /home/tampakrap/.mcollective.d/ssl/tampakrap.mcollective.forkbomb.gr.pem
+plugin.ssl_client_public = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/clients/tampakrap.mcollective.forkbomb.gr.pem
+
+# Interface settings:
+default_discovery_method = mc
+direct_addressing_threshold = 10
+ttl = 60
+color = 1
+rpclimitmethod = first
+
+# No additional subcollectives:
+collectives = mcollective
+main_collective = mcollective
+
+# Platform defaults:
+# These settings differ based on platform; the default config file created
+# by the package should include correct values or omit the setting if the
+# default value is fine.
+libdir = /home/tampakrap/.mcollective.d/plugins:/usr/lib/mcollective
+
+# Logging:
+logger_type = console
+loglevel = warn
