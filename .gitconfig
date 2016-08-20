@@ -16,3 +16,5 @@
 	mr = !git gitlab merge $(git rev-parse --abbrev-ref HEAD) production
 [core]
 	excludesfile = /home/tampakrap/.gitignore_global
+[commit]
+	gpgsign = true
