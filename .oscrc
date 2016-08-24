@@ -92,7 +92,7 @@ check_filelist = 1
 check_for_request_on_action = 0
 # what to do with the source package if the submitrequest has been accepted. If
 # nothing is specified the API default is used
-submitrequest_on_accept_action = noupdate
+#submitrequest_on_accept_action = noupdate
 # template for an accepted submitrequest
 submitrequest_accepted_template = Hi %(who)s,\n
  thanks for working on:\t%(tgt_project)s/%(tgt_package)s.
