@@ -20,7 +20,7 @@ set use_envelope_from = yes
 #set header = yes
 #set edit_headers = yes
 mailboxes `for dir in $(ls ~/.Mail); do echo -n "'+=== $dir ===' "; ls ~/.Mail/$dir | sed -e 's/ /##/' | LC_ALL=C sort | sed -r "s#([^ ]+)#=\"$dir/\1\"#g" | tr '\n' ' ' | sed -e 's/##/ /g'; done`
-alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
+alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
 subscribe "(gentoo-[a-z-]+@lists\.gentoo|(admin-auto|gsoc-mentors|heroes|mirror|opensuse-[a-z-]+)@opensuse)\.org|g(oogle-summer-of-code|soc-mentors)-announce@googlegroups\.com|(devel|hackweek|maso|opensuse-internal|openvpn-info|ops|ops-services|research|results|(talk-)?cz|users)@suse\.(cz|de)"
 
 ignore          *
@@ -38,5 +38,6 @@ source ~/.mutt/gpg
 source ~/.mutt/sidebar
 
 folder-hook 'gmail' 'source ~/.mutt/acc_gmail'
+folder-hook 'seznam' 'source ~/.mutt/acc_seznam'
 folder-hook 'gentoo' 'source ~/.mutt/acc_gentoo'
 folder-hook 'suse' 'source ~/.mutt/acc_suse'

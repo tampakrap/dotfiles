@@ -26,6 +26,25 @@ folderfilter = lambda foldername: foldername not in [
                    '[Gmail]/Important',
                    '[Gmail]/Starred',]
 
+[Account seznam]
+localrepository = local_seznam
+remoterepository = remote_seznam
+autorefresh = 10
+quick = 0
+
+[Repository local_seznam]
+type = Maildir
+localfolders = ~/.Mail/seznam
+
+[Repository remote_seznam]
+type = IMAP
+remotehost = imap.seznam.cz
+remoteuser = tampakrap
+remotepasseval = get_passeval('seznam')
+ssl = yes
+sslcacertfile = /etc/ssl/ca-bundle.pem
+remoteport = 993
+
 [Account gentoo]
 localrepository = local_gentoo
 remoterepository = remote_gentoo

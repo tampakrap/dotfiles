@@ -1,0 +1,8 @@
+set folder = ~/.Mail/seznam
+set postponed = +drafts
+set from = "tampakrap@seznam.cz"
+set hostname = "seznam.cz"
+set record = +sent
+unset signature
+
+# vim: ft=muttrc
