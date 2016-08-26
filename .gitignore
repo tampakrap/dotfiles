@@ -9,7 +9,7 @@
 .gnupg/.#*
 .imapfilter/certificates
 .mcollective.d/plugins
-.mcollective.d/ssl/tampakrap.mcollective.forkbomb.gr.pem
+.mcollective.d/ssl/tampakrap.pem
 .noipupdater/log
 .noipupdater/cache
 .weechat/certs

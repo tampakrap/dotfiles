@@ -8,8 +8,8 @@ plugin.rabbitmq.pool.1.port = 61614
 plugin.rabbitmq.pool.1.user = tampakrap
 plugin.rabbitmq.pool.1.ssl = 1
 plugin.rabbitmq.pool.1.ssl.ca = /home/tampakrap/.mcollective.d/ssl/puppetca.forkbomb.gr.pem
-plugin.rabbitmq.pool.1.ssl.cert = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/clients/tampakrap.mcollective.forkbomb.gr.pem
-plugin.rabbitmq.pool.1.ssl.key = /home/tampakrap/.mcollective.d/ssl/tampakrap.mcollective.forkbomb.gr.pem
+plugin.rabbitmq.pool.1.ssl.cert = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/clients/tampakrap.pem
+plugin.rabbitmq.pool.1.ssl.key = /home/tampakrap/.mcollective.d/ssl/tampakrap.pem
 plugin.rabbitmq.initial_reconnect_delay = 0.01
 plugin.rabbitmq.max_reconnect_delay = 30.0
 plugin.rabbitmq.use_exponential_back_off = true
@@ -21,8 +21,8 @@ plugin.rabbitmq.timeout = -1
 # SSL security plugin settings
 securityprovider = ssl
 plugin.ssl_server_public = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/servers.mcollective.forkbomb.gr.pem
-plugin.ssl_client_private = /home/tampakrap/.mcollective.d/ssl/tampakrap.mcollective.forkbomb.gr.pem
-plugin.ssl_client_public = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/clients/tampakrap.mcollective.forkbomb.gr.pem
+plugin.ssl_client_private = /home/tampakrap/.mcollective.d/ssl/tampakrap.pem
+plugin.ssl_client_public = /home/tampakrap/Repos/puppet/forkbomb.gr-puppet/modules/dist/profile/files/etc/mcollective/ssl/clients/tampakrap.pem
 
 # Interface settings:
 default_discovery_method = mc
