@@ -6,6 +6,26 @@ ui = ttyui
 socktimeout = 50
 pythonfile = ~/bin/getmailpass.py
 
+[Account gmail]
+localrepository = local_gmail
+remoterepository = remote_gmail
+autorefresh = 4
+quick = 0
+
+[Repository local_gmail]
+type = Maildir
+localfolders = ~/.Mail/gmail
+
+[Repository remote_gmail]
+type = Gmail
+remoteuser = tampakrap
+remotepasseval = get_passeval('gmail')
+sslcacertfile = /etc/ssl/ca-bundle.pem
+folderfilter = lambda foldername: foldername not in [
+                   '[Gmail]/All Mail',
+                   '[Gmail]/Important',
+                   '[Gmail]/Starred',]
+
 [Account gentoo]
 localrepository = local_gentoo
 remoterepository = remote_gentoo
@@ -28,26 +48,6 @@ remotepasseval = get_passeval('gentoo')
 ssl = yes
 sslcacertfile = /etc/ssl/ca-bundle.pem
 remoteport = 993
-
-[Account gmail]
-localrepository = local_gmail
-remoterepository = remote_gmail
-autorefresh = 4
-quick = 0
-
-[Repository local_gmail]
-type = Maildir
-localfolders = ~/.Mail/gmail
-
-[Repository remote_gmail]
-type = Gmail
-remoteuser = tampakrap
-remotepasseval = get_passeval('gmail')
-sslcacertfile = /etc/ssl/ca-bundle.pem
-folderfilter = lambda foldername: foldername not in [
-                   '[Gmail]/All Mail',
-                   '[Gmail]/Important',
-                   '[Gmail]/Starred',]
 
 [Account suse]
 localrepository = local_suse
