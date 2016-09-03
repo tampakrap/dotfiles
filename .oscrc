@@ -128,4 +128,4 @@ user = tampakrap
 aliases = suse
 # email used in .changes, unless the one from osc meta prj <user> will be used
 email = tchatzimichos@suse.com
-trusted_prj = openSUSE.org:openSUSE:Factory SUSE:SLE-12:GA
+trusted_prj=openSUSE.org:openSUSE:Factory SUSE:SLE-12:GA NON_Public:infrastructure SUSE:SLE-12:Update SUSE:SLE-12-SP1:GA
