@@ -126,4 +126,4 @@ progress_issues():match_field('X-Redmine-Project', '^opensuse-admin$'):move_mess
 progress_issues():move_messages(suse['logs/progress'])
 progress:move_messages(suse['logs'])
 suse_unseen:match_from('.*@rsm(-tacoma)?.cz'):move_messages(suse['logs/rsm-tacoma'])
-suse_unseen:match_to('DL-(Prague|PRAGUE|TAG|SU(-ALLFY16)?|MicroFocusInternational|MICROFOCUSINTERNATIONAL)(-(A[lL]{2}|EMPLOYEES|Employees|Office|OFFICE))?(\\.iList\\.INTERNET)?@(ilist\\.attachmategroup\\.com|ILIST\\.ATTACHMATEGROUP\\.COM)'):move_messages(suse['newsletters'])
+suse_unseen:match_to('DL-(Prague|PRAGUE|TAG|SU(-(ALLFY16|ENG))?|MicroFocusInternational|MICROFOCUSINTERNATIONAL)(-(A[lL]{2}|EMPLOYEES|Employees|Office|OFFICE))?(\\.iList\\.INTERNET)?@(ilist\\.attachmategroup\\.com|ILIST\\.ATTACHMATEGROUP\\.COM)'):move_messages(suse['newsletters'])
