@@ -88,7 +88,7 @@ suse_list('opensuse-internal'):move_messages(suse['lists/suse/opensuse-internal'
 suse_list('openvpn-info'):move_messages(suse['lists/suse/openvpn-info'])
 suse_list('ops'):move_messages(suse['lists/suse/ops'])
 infra = suse_list('ops-services')
-infra_logs = infra:match_from('((netapp0[1-2]|rt-count)@suse|root@crick.suse)\\.de|(acmon1.noreply|netapp0[5-6])@suse\\.cz|(asupprod@netapp|ShipmentNotificationDVOnline@intel)\\.com') + infra:match_to('rd-adm-svn@suse\\.de') + suse_unseen:match_from('scz-probe[1-3]@(suse|novell)\\.com|keepalived@(sparta|slavia)\\.suse\\.cz|netbolz-srv1-c7@suse\\.cz')
+infra_logs = infra:match_from('((netapp0[1-2]|rt-count)@suse|root@crick.suse)\\.de|(acmon1\\.noreply|netapp0[5-6])@suse\\.cz|(asupprod@netapp|ShipmentNotificationDVOnline@intel)\\.com') + infra:match_to('rd-adm-svn@suse\\.de') + suse_unseen:match_from('scz-probe[1-3]@(suse|novell)\\.com|keepalived@(sparta|slavia)\\.suse\\.cz|netbolz-srv1-c7@suse\\.cz')
 infra_logs:move_messages(suse['logs/infra'])
 infra:match_from('gitlab@opensuse\\.org'):move_messages(suse['logs/gitlab'])
 infra_rt_all = infra:match_field('X-RT-Loop-Prevention', '(SUSE Ticket|RT-ADM)')
