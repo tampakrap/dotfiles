@@ -5,7 +5,7 @@ set hostname = "suse.com"
 set record = +Sent
 set signature = ~/.mutt/signature_suse
 
-send-hook "~C\"(admin-auto|gsoc-mentors|heroes|mirror|opensuse-[a-z-]+)@opensuse\.org\"" "my_hdr from: tampakrap@opensuse.org"
+send-hook "~C\"(admin-auto|gsoc-mentors|heroes|mirror|opensuse-[a-z-]+(\+release-[a-z0-9]+)?)@opensuse\.org\"" "my_hdr from: tampakrap@opensuse.org"
 send-hook "~Ctampakrap@opensuse\.org" "my_hdr from: tampakrap@opensuse.org"
 
 # vim: ft=muttrc
