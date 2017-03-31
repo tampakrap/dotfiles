@@ -52,7 +52,7 @@ build-type =
 # this corresponds to osc build's -x option and can be overridden with that
 # -x '' can also be given on the command line to override this setting, or
 # you can have an empty setting here.
-extra-pkgs = colormake
+#extra-pkgs = colormake
 # build platform is used if the platform argument is omitted to osc build
 build_repository = openSUSE_Factory
 # default project for getpac or bco
@@ -120,7 +120,7 @@ email = tampakrap@opensuse.org
 #pass =
 # Force using of keyring for this API
 #keyring = 1
-trusted_prj=openSUSE:Factory openSUSE:13.2 openSUSE:13.1 openSUSE:12.3 network:utilities systemsmanagement:puppet devel:languages:ruby SUSE:SLE-11:SP3 devel:languages:ruby:backports devel:languages:python SUSE:SLE-12:GA systemsmanagement:saltstack openSUSE:Leap:42.1 server:php:applications devel:languages:ruby:extensions
+trusted_prj=openSUSE:Factory network:utilities systemsmanagement:puppet devel:languages:ruby devel:languages:ruby:backports devel:languages:python SUSE:SLE-12:GA systemsmanagement:saltstack server:php:applications devel:languages:ruby:extensions openSUSE:Leap:42.2 Application:Dochazka Application:Dochazka:staging openSUSE:Leap:42.2:Update Virtualization:Appliances:Builder
 
 [https://api.suse.de]
 user = tampakrap
