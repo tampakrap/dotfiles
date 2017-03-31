@@ -33,7 +33,7 @@ end
 
 opensuse_list = function (list_prefix)
     list = '^' .. list_prefix .. '@opensuse.org$'
-    return suse_unseen:match_field('X-Mailinglist', list_prefix) +
+    return suse_unseen:match_field('X-Mailinglist', '^' .. list_prefix .. '$') +
            mine_to:contain_to(list) + mine_to:contain_cc(list) +
            mine_from:contain_to(list) + mine_from:contain_cc(list) +
            suse_unseen:match_from(list_prefix .. '\\+(owner|help)@opensuse.org')
@@ -63,6 +63,7 @@ end
 
 
 suse_unseen:match_field('X-Spam-Flag', 'YES'):move_messages(suse['Spam'])
+opensuse_list('admin'):move_messages(suse['lists/opensuse/admin'])
 opensuse_list('admin-auto'):move_messages(suse['lists/opensuse/admin-auto'])
 opensuse_list('gsoc-mentors'):move_messages(suse['lists/opensuse/gsoc-mentors'])
 opensuse_list('heroes'):move_messages(suse['lists/opensuse/heroes'])
