@@ -7,6 +7,7 @@
 .gnupg/pubring.kbx*
 .gnupg/openpgp-revocs.d/
 .gnupg/.#*
+.gnupg/tofu.db
 .imapfilter/certificates
 .mcollective.d/plugins
 .mcollective.d/ssl/tampakrap.pem
