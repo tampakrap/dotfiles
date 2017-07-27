@@ -116,7 +116,7 @@ suse_unseen:match_from('gitlab@(opensuse\\.org|suse\\.de)'):move_messages(suse['
 ibs = suse_unseen:match_field('X-OBS-URL', 'https://build.suse.de')
 ibs:match_field('X-OBS-event-type', 'build_.*'):move_messages(suse['logs/ibs/builds'])
 ibs:match_field('X-OBS-event-type', 'comment_for_.*|request_.*|review_.*'):move_messages(suse['logs/ibs/sr'])
-suse_unseen:match_from('nagios@(novell\\.com|suse\\.(cz|de))'):move_messages(suse['logs/nagios'])
+suse_unseen:match_from('icinga@suse.cz|nagios@(novell\\.com|suse\\.(cz|de))'):move_messages(suse['logs/nagios'])
 obs = suse_unseen:match_field('X-OBS-URL', 'https://build.opensuse.org')
 obs:match_field('X-OBS-event-type', 'build_.*'):move_messages(suse['logs/obs/builds'])
 obs_sr = obs:match_field('X-OBS-event-type', 'comment_for_.*|request_.*|review_.*') + suse_unseen:contain_from('coolo@suse.de'):contain_subject('Reminder for openSUSE:Factory work')
