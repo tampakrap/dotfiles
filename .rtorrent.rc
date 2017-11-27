@@ -3,68 +3,83 @@
 # uncomment the options you wish to enable.
 
 # Maximum and minimum number of peers to connect to per torrent.
+#
 # upload speed * 1.3
-min_peers = 20
-max_peers = 147
+#throttle.min_peers.normal.set = 40
+#throttle.max_peers.normal.set = 100
 
 # Same as above but for seeding completed torrents (-1 = same as downloading)
-min_peers_seed = 10
-max_peers_seed = 147
+#
+#throttle.min_peers.seed.set = 10
+#throttle.max_peers.seed.set = 50
 
 # Maximum number of simultanious uploads per torrent.
 # 1 + (upload speed / 6)
-max_uploads = 19
+#
+#throttle.max_uploads.set = 15
 
 # Global upload and download rate in KiB. "0" for unlimited.
+#
 # 95% of download speed
-download_rate = 1773
+#throttle.global_down.max_rate.set_kb = 0
 # 80% of upload speed
-upload_rate = 90
+#throttle.global_up.max_rate.set_kb = 0
 
 # Default directory to save the downloaded torrents.
-directory = /home/tampakrap/.rtorrent/incomplete
+#
+directory.default.set = /home/tampakrap/.rtorrent/incomplete
 
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = /home/tampakrap/.rtorrent/session
+#
+session.path.set = /home/tampakrap/.rtorrent/session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,"load_start=/home/tampakrap/.rtorrent/watch/*.torrent,\"d.set_custom=target,/home/tampakrap/Downloads\""
-schedule = untied_directory,5,5,stop_untied=
+#
+schedule2 = watch_directory,5,5,load.start=/home/tampakrap/.rtorrent/watch/*.torrent
+schedule2 = untied_directory,5,5,stop_untied=
 
 # Move completed torrents from ~/.rtorrent/incomplete to ~/Downloads
-system.method.set_key = event.download.finished,move_complete,"d.set_directory=\"$d.get_custom=target\"; execute=mv,-u,$d.get_base_path=,\"$d.get_custom=target\""
+#system.method.set_key = event.download.finished,move_complete,"d.set_directory=\"$d.get_custom=target\"; execute=mv,-u,$d.get_base_path=,\"$d.get_custom=target\""
 
 # Close torrents when diskspace is low.
-schedule = low_diskspace,5,60,close_low_diskspace=200M
+#
+schedule2 = low_diskspace,5,60,close_low_diskspace=200M
 
 # The ip address reported to the tracker.
-#ip = 127.0.0.1
-#ip = rakshasa.no
+#
+#network.local_address.set = 127.0.0.1
+#network.local_address.set = rakshasa.no
 
 # The ip address the listening socket and outgoing connections is
 # bound to.
-#bind = 127.0.0.1
-#bind = rakshasa.no
+#
+#network.bind_address.set = 127.0.0.1
+#network.bind_address.set = rakshasa.no
 
 # Port range to use for listening.
-port_range = 49264-49268
+#
+#network.port_range.set = 6890-6999
 
 # Start opening ports at a random position within the port range.
-port_random = yes
+#
+#network.port_random.set = no
 
 # Check hash for finished torrents. Might be usefull until the bug is
 # fixed that causes lack of diskspace not to be properly reported.
-check_hash = yes
+#
+pieces.hash.on_completion.set = yes
 
 # Set whether the client should try to connect to UDP trackers.
-use_udp_trackers = yes
+#
+#trackers.use_udp.set = yes
 
 # Alternative calls to bind and ip that should handle dynamic ip's.
-#schedule = ip_tick,0,1800,ip=rakshasa
-#schedule = bind_tick,0,1800,bind=rakshasa
+#
+#schedule2 = ip_tick,0,1800,ip=rakshasa
+#schedule2 = bind_tick,0,1800,bind=rakshasa
 
 # Encryption options, set to none (default) or any combination of the following:
 # allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
@@ -72,19 +87,27 @@ use_udp_trackers = yes
 # The example value allows incoming encrypted connections, starts unencrypted
 # outgoing connections but retries with encryption if they fail, preferring
 # plaintext to RC4 encryption after the encrypted handshake
-encryption = allow_incoming,try_outgoing,enable_retry
+#
+# protocol.encryption.set = allow_incoming,enable_retry,prefer_plaintext
 
 # Enable DHT support for trackerless torrents or when all trackers are down.
 # May be set to "disable" (completely disable DHT), "off" (do not start DHT),
 # "auto" (start and stop DHT as needed), or "on" (start DHT immediately).
 # The default is "off". For DHT to work, a session directory must be defined.
-dht = auto
+#
+dht.mode.set = auto
 
-# UDP port to use for DHT.
-dht_port = 6881
+# UDP port to use for DHT. 
+#
+#dht.port.set = 6881
 
 # Enable peer exchange (for torrents not marked private)
-peer_exchange = yes
+#
+#protocol.pex.set = yes
+
+# Set downlad list layout style. ("full", "compact")
+#
+ui.torrent_list.layout.set = "full"
 
 # Colors
 # 0 = black
@@ -97,11 +120,11 @@ peer_exchange = yes
 # 7 = white
 # 8 = gray
 
-color_inactive_fg = 3
-#color_inactive_bg = 0
-color_dead_fg = 1
-#color_dead_bg = 0
-color_active_fg = 2
-#color_active_bg = 0
-color_finished_fg = 6
-#color_finished_bg = 0
+#color_inactive_fg = 3
+##color_inactive_bg = 0
+#color_dead_fg = 1
+##color_dead_bg = 0
+#color_active_fg = 2
+##color_active_bg = 0
+#color_finished_fg = 6
+##color_finished_bg = 0
