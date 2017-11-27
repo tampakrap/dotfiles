@@ -10,6 +10,7 @@ alias ls="ls --color=auto -h"
 alias lsd="ls -ldG *(-/DN)"
 alias grep="grep --color=auto"
 alias isc='osc -A https://api.suse.de/'
+alias fsc='osc -A https://api.freeko.org/'
 alias caff='caff -m yes'
 alias git="hub"
 alias facepalm="cat ~/.zsh/facepalm"
