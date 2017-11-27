@@ -1,12 +1,14 @@
 " Vundle
 set nocompatible
+filetype off
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 Bundle 'scrooloose/nerdtree'
@@ -26,6 +28,10 @@ Bundle 'mhinz/vim-signify'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'GutenYe/gem.vim'
 Bundle 'stephpy/vim-yaml'
+Bundle 'rodjek/vim-puppet'
+Bundle 'saltstack/salt-vim'
+
+call vundle#end()
 
 filetype plugin indent on
 
@@ -106,10 +112,8 @@ set shiftround
 set expandtab
 
 " 2 spaces instead of 4 for certain filetypes
-autocmd FileType puppet set sts=2 sw=2 ts=2
 autocmd FileType ruby set sts=2 sw=2 ts=2
 autocmd FileType eruby set sts=2 sw=2 ts=2
-autocmd FileType yaml set sts=2 sw=2 ts=2
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
