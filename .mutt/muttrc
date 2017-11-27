@@ -17,11 +17,13 @@ set mailcap_path = ~/.mutt/mailcap
 set realname = "Theo Chatzimichos"
 set sendmail = /usr/bin/msmtp
 set use_envelope_from = yes
+set pager_context = 3
+set pager_index_lines = 8
 #set header = yes
 #set edit_headers = yes
 mailboxes `for dir in $(ls ~/.Mail); do echo -n "'+=== $dir ===' "; ls ~/.Mail/$dir | sed -e 's/ /##/' | LC_ALL=C sort | sed -r "s#([^ ]+)#=\"$dir/\1\"#g" | tr '\n' ' ' | sed -e 's/##/ /g'; done`
 alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
-subscribe "(gentoo-[a-z-]+@lists\.gentoo|(admin-auto|gsoc-mentors|heroes|mirror|opensuse-[a-z-]+)@opensuse)\.org|g(oogle-summer-of-code|soc-mentors)-announce@googlegroups\.com|(devel|hackweek|maso|opensuse-internal|openvpn-info|ops|ops-services|research|results|(talk-)?cz|users)@suse\.(cz|de)"
+subscribe "(gentoo-[a-z-]+@lists\.gentoo\.org|(admin(-auto)?|gsoc-mentors|heroes|mirror|opensuse-[a-z-]+)@opensuse)\.org|(g(oogle-summer-of-code|soc-mentors)-announce|puppet(-security)?-announce|salt-(announce|packagers))@googlegroups\.com|(devel|hackweek|maso|opensuse-internal|openvpn-info|ops(-services)?|puppet-maintainers|research|results|salt(-maintainers)?|suse-it|(talk-)?cz|users)@suse\.(cz|de)|(freeko@lists\.vpsfree|talk@linuxdays)\.cz|voxpupuli@groups\.io"
 
 ignore          *
 unignore        From: To: Cc: Bcc: Date: Subject:
