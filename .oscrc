@@ -120,12 +120,16 @@ email = tampakrap@opensuse.org
 #pass =
 # Force using of keyring for this API
 #keyring = 1
-trusted_prj=openSUSE:Factory network:utilities systemsmanagement:puppet devel:languages:ruby devel:languages:ruby:backports devel:languages:python SUSE:SLE-12:GA systemsmanagement:saltstack server:php:applications devel:languages:ruby:extensions openSUSE:Leap:42.2 Application:Dochazka Application:Dochazka:staging openSUSE:Leap:42.2:Update Virtualization:Appliances:Builder
+trusted_prj=openSUSE:Factory network:utilities systemsmanagement:puppet devel:languages:ruby devel:languages:ruby:backports devel:languages:python SUSE:SLE-12:GA systemsmanagement:saltstack server:php:applications devel:languages:ruby:extensions openSUSE:Leap:42.2 Application:Dochazka Application:Dochazka:staging openSUSE:Leap:42.2:Update Virtualization:Appliances:Builder openSUSE:Leap:42.3
 
 [https://api.suse.de]
 user = tampakrap
-# set aliases for this apiurl
 aliases = suse
-# email used in .changes, unless the one from osc meta prj <user> will be used
 email = tchatzimichos@suse.com
 trusted_prj=openSUSE.org:openSUSE:Factory SUSE:SLE-12:GA NON_Public:infrastructure SUSE:SLE-12:Update SUSE:SLE-12-SP1:GA
+
+[https://api.freeko.org]
+user=tampakrap
+aliases = freeko
+email = tampakrap@opensuse.org
+trusted_prj=openSUSE.org:openSUSE:Leap:42.3 openSUSE.org:openSUSE:Factory
