@@ -1,6 +1,6 @@
 [general]
 metadata = ~/.cache/offlineimap
-accounts = gentoo, gmail
+accounts = gmail
 maxsyncaccounts = 5
 ui = ttyui
 socktimeout = 50
@@ -41,29 +41,6 @@ type = IMAP
 remotehost = imap.seznam.cz
 remoteuser = tampakrap
 remotepasseval = get_passeval('seznam')
-ssl = yes
-sslcacertfile = /etc/ssl/ca-bundle.pem
-remoteport = 993
-
-[Account gentoo]
-localrepository = local_gentoo
-remoterepository = remote_gentoo
-autorefresh = 10
-quick = 0
-#presynchook
-#postsynchook
-#status_backend = plain/sqlite
-#maxage
-
-[Repository local_gentoo]
-type = Maildir
-localfolders = ~/.Mail/gentoo
-
-[Repository remote_gentoo]
-type = IMAP
-remotehost = mail.gentoo.org
-remoteuser = tampakrap
-remotepasseval = get_passeval('gentoo')
 ssl = yes
 sslcacertfile = /etc/ssl/ca-bundle.pem
 remoteport = 993

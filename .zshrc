@@ -21,6 +21,7 @@ alias todo="edit ~/Documents/todo"
 alias nmrestart="for stat in off on; do nmcli n \$stat; done"
 alias mco="STOMP_PASSWORD=\$(pass forkbomb.gr/odb/rabbitmq/tampakrap) mco $@"
 alias pass-opensuse="PASSWORD_STORE_DIR=~/.password-store-opensuse pass"
+alias pass-suse="PASSWORD_STORE_DIR=~/.password-store-suse pass"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
 if type -p colorsvn &> /dev/null ; then alias svn="colorsvn" ; fi
@@ -76,7 +77,6 @@ function grt () {
 
 if [[ $UID != 0 ]]; then
     PLUGINS=(git hg jump osc virtualenv keychain)
-    KEYCHAIN_USER=(tampakrap 'Theo Chatzimichos <tampakrap@gentoo.org>')
     WORKSTATIONS=(guru rakim virtuoso xzibit)
     KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
 
