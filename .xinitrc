@@ -3,7 +3,7 @@
 xrdb -merge ~/.Xresources
 xcompmgr &
 case $HOSTNAME in
-    guru|virtuoso|xzibit|bahamadia) setxkbmap 'us,gr,cz' -option -option 'grp:lwin_toggle' ;;
+    guru|xzibit|bahamadia) setxkbmap 'us,gr,cz' -option -option 'grp:lwin_toggle' ;;
     rakim)
         setxkbmap 'us,gr,cz' -model mac -option -option 'grp:lalt_toggle'
         xmodmap ~/.Xmodmap_mac
@@ -13,8 +13,8 @@ xmodmap ~/.Xmodmap
 urxvtd-256color -q -o -f
 sh ~/.fehbg &
 xset s 180 180
-case $HOSTNAME in guru|rakim|virtuoso|bahamadia) syndaemon -t -k -i 2 -d ;; esac
-case $HOSTNAME in rakim|virtuoso)
+case $HOSTNAME in guru|rakim|bahamadia) syndaemon -t -k -i 2 -d ;; esac
+case $HOSTNAME in rakim)
     export LC_ALL="cs_CZ.UTF-8"
     export LANG="cs_CZ.UTF-8"
     ;;
