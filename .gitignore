@@ -1,4 +1,4 @@
-.ssh/id_?sa*
+.ssh/id_*
 .ssh/known_hosts*
 .gnupg/private-keys-v1.d
 .gnupg/*.gpg*
