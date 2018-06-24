@@ -196,6 +196,9 @@ bar {
 
 # set per application border
 for_window [class="Firefox"] border none
+for_window [class="Chromium"] border none
+for_window [class="Google-chrome"] border none
+for_window [class="Spotify"] border none
 
 # start util apps
 exec_always "killall xxkb; xxkb"
