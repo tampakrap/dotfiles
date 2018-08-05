@@ -76,6 +76,9 @@ function grt () {
 }
 
 if [[ $UID != 0 ]]; then
+    export GOPATH="/home/tampakrap/.go:$GOROOT/contrib"
+    export GOBIN="/home/tampakrap/.go/bin"
+    export PATH="$PATH:$GOBIN"
     PLUGINS=(git hg jump osc virtualenv keychain kubectl)
     WORKSTATIONS=(bahamadia guru rakim xzibit)
     KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
