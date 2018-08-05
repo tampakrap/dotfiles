@@ -16,9 +16,6 @@ gmail_new = gmail['INBOX']:is_new()
 gmail_recent = gmail['INBOX']:is_recent()
 gmail_unseen = gmail['INBOX']:is_unseen()
 
-gmail:delete_mailbox('logs/fbs/builds')
-gmail:delete_mailbox('logs/fbs/sr')
-
 gmail_unseen:match_field('X-BeenThere', 'announce@linuxdays\\.cz'):move_messages(gmail['lists/linuxdays/announce'])
 gmail_unseen:match_field('X-BeenThere', 'talk@linuxdays\\.cz'):move_messages(gmail['lists/linuxdays/talk'])
 gmail_unseen:match_field('List-Id', 'voxpupuli\\.groups\\.io'):move_messages(gmail['lists/voxpupuli'])
