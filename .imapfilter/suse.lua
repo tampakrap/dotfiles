@@ -61,7 +61,6 @@ progress_issues = function ()
     return progress:match_field('X-Redmine-Issue-Id', '[0-9]{1,6}')
 end
 
-
 suse_unseen:match_field('X-Spam-Flag', 'YES'):move_messages(suse['Spam'])
 opensuse_list('admin'):move_messages(suse['lists/opensuse/admin'])
 opensuse_list('admin-auto'):move_messages(suse['lists/opensuse/admin-auto'])
@@ -96,6 +95,7 @@ infra:match_from('gitlab@opensuse\\.org'):move_messages(suse['logs/gitlab'])
 infra_rt_all = infra:match_field('X-RT-Loop-Prevention', '(SUSE Ticket|RT-ADM)')
 infra_rt('archticket'):move_messages(suse['logs/rt/arch'])
 infra_rt('infra'):move_messages(suse['logs/rt/infra'])
+infra_rt('openqa-request'):move_messages(suse['logs/rt/openqa'])
 infra_rt('openvpn'):move_messages(suse['logs/rt/openvpn'])
 infra_rt('prague'):move_messages(suse['logs/rt/prague'])
 infra_rt('s390ticket'):move_messages(suse['logs/rt/s390'])
