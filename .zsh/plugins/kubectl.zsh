@@ -7,7 +7,7 @@ if (( $+commands[kubectl] )); then
     unset __KUBECTL_COMPLETION_FILE
 fi
 
-alias k="kctl"
+#alias k="kctl"
 alias k8s="kubectl"
 alias κυβερνήτης="kubectl"
 compdef k="kubectl"
