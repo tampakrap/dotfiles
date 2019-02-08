@@ -20,7 +20,6 @@ alias :wq="facepalm"
 alias weechat="WEECHAT_PASSPHRASE=\$(pass forkbomb.gr/rakim/weechat) weechat"
 alias todo="edit ~/Documents/todo"
 alias nmrestart="for stat in off on; do nmcli n \$stat; done"
-alias mco="STOMP_PASSWORD=\$(pass forkbomb.gr/odb/rabbitmq/tampakrap) mco $@"
 alias pass-opensuse="PASSWORD_STORE_DIR=~/.password-store-opensuse pass"
 alias pass-suse="PASSWORD_STORE_DIR=~/.password-store-suse pass"
 
