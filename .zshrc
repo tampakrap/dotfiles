@@ -4,9 +4,6 @@ export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
 export LESS=-R
 
-[ -f /etc/DIR_COLORS ] && eval $(dircolors -b /etc/DIR_COLORS)
-export ZLSCOLORS="${LS_COLORS}"
-
 alias ls="ls --color=auto -h"
 alias lsd="ls -ldG *(-/DN)"
 alias grep="grep --color=auto"
@@ -84,11 +81,10 @@ prompt spaceship
 
 setopt completealiases
 setopt prompt_subst
-setopt extendedglob
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-HISTFILE=${HOME}/.zsh_history
+
 SAVEHIST=1000
 HISTSIZE=1600
 
@@ -118,7 +114,7 @@ source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 if [[ $UID != 0 ]]; then
     export GOPATH="$HOME/.go:$GOROOT/contrib"
-    export GOBIN="$HOME/tampakrap/.go/bin"
+    export GOBIN="$HOME/.go/bin"
     export PATH="$PATH:$GOBIN"
     PLUGINS=(git hg jump osc virtualenv keychain kubectl)
     WORKSTATIONS=(bahamadia guru rakim xzibit)
