@@ -1,8 +1,8 @@
-set folder = ~/.Mail/suse
-set postponed = +Drafts
+#set folder = ~/.Mail/suse
+set postponed = +suse/Drafts
 set from = "tchatzimichos@suse.com"
 set hostname = "suse.com"
-set record = +Sent
+set record = +suse/Sent
 set signature = ~/.mutt/signature_suse
 
 send-hook "~C'(admin(-auto)?|gsoc-mentors|heroes|mirror|opensuse-[a-z-]+(\\+release-[a-z0-9]+)?)@opensuse\\.org'" "my_hdr from: tampakrap@opensuse.org"

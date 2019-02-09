@@ -1,5 +1,5 @@
-set folder = ~/.Mail/gmail
-set postponed = +[Gmail].Drafts
+#set folder = ~/.Mail/gmail
+set postponed = =gmail/[Gmail].Drafts
 set from = "tampakrap@gmail.com"
 set hostname = "gmail.com"
 unset record

@@ -1,8 +1,8 @@
 set sidebar_visible = yes
 set sidebar_width = 42
 set sidebar_short_path = yes
-set sidebar_folder_indent = no
-set sidebar_delim_chars = '/'
+set sidebar_folder_indent = yes
+set sidebar_delim_chars = '/.'
 set sidebar_new_mail_only = no
 set mail_check_stats
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
