@@ -6,9 +6,9 @@ set sidebar_delim_chars = '/.'
 set sidebar_new_mail_only = no
 set mail_check_stats
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
+bind index,pager J sidebar-next
+bind index,pager K sidebar-prev
+bind index,pager L sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index B bounce-message
