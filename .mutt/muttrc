@@ -21,7 +21,7 @@ set pager_context = 3
 set pager_index_lines = 8
 #set header = yes
 #set edit_headers = yes
-mailboxes `for dir in $(ls ~/.Mail); do echo -n "'+=== $dir ===' "; ls ~/.Mail/$dir | sed -e 's/ /##/' | LC_ALL=C sort | sed -r "s#([^ ]+)#=\"$dir/\1\"#g" | tr '\n' ' ' | sed -e 's/##/ /g'; done`
+mailboxes `mutt_get_mailboxes`
 alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
 subscribe "(admin(-auto)?|heroes|mirror|opensuse-[a-z-]+)@opensuse\.org|linuxteam-core@googlegroups\.com|(caasp-internal|devel|hackweek|infra-discuss|maso|opensuse-internal|openvpn-info|ops(-services)?|puppet-maintainers|research|results|salt(-maintainers)?|suse-it|(talk-)?cz|users)@suse\.(cz|de)|(freeko@lists\.vpsfree|(announce|talk)@linuxdays)\.cz|voxpupuli@groups\.io"
 
