@@ -19,6 +19,7 @@ alias todo="edit ~/Documents/todo"
 alias nmrestart="for stat in off on; do nmcli n \$stat; done"
 alias pass-opensuse="PASSWORD_STORE_DIR=~/.password-store-opensuse pass"
 alias pass-suse="PASSWORD_STORE_DIR=~/.password-store-suse pass"
+alias sudo="sudo --preserve-env=SSH_CONNECTION"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
 if type -p colorsvn &> /dev/null ; then alias svn="colorsvn" ; fi
