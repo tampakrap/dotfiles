@@ -1,24 +1,37 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export COLORTERM=yes
 export CC=gcc
 export PAGER=/usr/bin/less
 export EDITOR=/usr/bin/vim
 export LESS=-R
+export CLICOLOR=1
+export LSCOLORS="Exfxcxdxbxegedabagacad"
+export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
-alias ls="ls --color=auto -h"
+alias ls='ls -Gh'
+alias dir='ls -l'
+alias ll='ls -l'
+alias la='ls -la'
+alias l='ls -alF'
+alias ls-l='ls -l'
+alias o='less'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cd..='cd ..'
+alias rd=rmdir
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias md='mkdir -p'
 alias lsd="ls -ldG *(-/DN)"
 alias grep="grep --color=auto"
-alias isc='osc -A https://api.suse.de/'
-alias fsc='osc -A https://api.freeko.org/'
 alias caff='caff -m yes'
 alias git="hub"
 alias facepalm="cat ~/.zsh/facepalm"
 alias :q="facepalm"
 alias :wq="facepalm"
-alias weechat="WEECHAT_PASSPHRASE=\$(pass forkbomb.gr/rakim/weechat) weechat"
 alias todo="edit ~/Documents/todo"
-alias nmrestart="for stat in off on; do nmcli n \$stat; done"
-alias pass-opensuse="PASSWORD_STORE_DIR=~/.password-store-opensuse pass"
-alias pass-suse="PASSWORD_STORE_DIR=~/.password-store-suse pass"
 
 if type -p colorcvs &> /dev/null ; then alias cvs="colorcvs" ; fi
 if type -p colorsvn &> /dev/null ; then alias svn="colorsvn" ; fi
@@ -33,8 +46,21 @@ if type -p colorgcc &> /dev/null ; then
 fi
 
 autoload -U colors; colors
-autoload -U compinit; compinit
+autoload -U compinit; compinit -u
 autoload -U promptinit; promptinit
+
+bindkey -e
+
+# History completion on pgup and pgdown
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[5~" history-beginning-search-backward-end
+bindkey "^[[6~" history-beginning-search-forward-end
+
+## Home and End
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_USER_SHOW=always
@@ -80,6 +106,7 @@ SPACESHIP_PROMPT_ORDER=(
 prompt spaceship
 
 setopt completealiases
+setopt extendedglob
 setopt prompt_subst
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_DUPS
@@ -87,6 +114,7 @@ setopt HIST_IGNORE_SPACE
 
 SAVEHIST=1000
 HISTSIZE=1600
+HISTFILE=${HOME}/.zsh_history
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:*:*:*' menu select
@@ -111,13 +139,15 @@ function grt () {
 }
 
 source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.iterm2_shell_integration.zsh
+
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+stty discard undef
 
 if [[ $UID != 0 ]]; then
-    export GOPATH="$HOME/.go:$GOROOT/contrib"
-    export GOBIN="$HOME/.go/bin"
-    export PATH="$PATH:$GOBIN"
     PLUGINS=(jump keychain kubectl)
-    WORKSTATIONS=(bahamadia guru quasimoto rakim xzibit)
+    WORKSTATIONS=(quasimoto rakim)
     KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
 
     for plugin in ${PLUGINS[@]}; do
