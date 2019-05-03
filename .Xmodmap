@@ -1,5 +1,0 @@
-! rebind CapsLock as right Control key
-clear Lock
-remove Control = Control_R
-keysym Caps_Lock = Control_R
-add mod3 = Control_R

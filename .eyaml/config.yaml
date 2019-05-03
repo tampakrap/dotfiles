@@ -1,3 +1,0 @@
----
-encrypt_method: 'gpg'
-gpg_recipients_file: '/home/tampakrap/Repos/puppet/forkbomb.gr-puppet/hieradata/hiera-eyaml-gpg.recipients'

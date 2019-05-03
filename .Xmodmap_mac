@@ -1,5 +1,0 @@
-! swap left Alt and Super keys
-remove mod1 = Alt_L
-remove mod4 = Super_L
-keysym Alt_L = Super_L
-keysym Super_L = Alt_L
