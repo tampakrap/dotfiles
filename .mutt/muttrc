@@ -15,7 +15,7 @@ set certificate_file = ~/.cache/mutt/certs
 set alias_file = ~/.mutt/alias
 set mailcap_path = ~/.mutt/mailcap
 set realname = "Theo Chatzimichos"
-set sendmail = /usr/bin/msmtp
+set sendmail = /usr/local/bin/msmtp
 set use_envelope_from = yes
 set pager_context = 3
 set pager_index_lines = 8
@@ -23,7 +23,7 @@ set pager_index_lines = 8
 #set edit_headers = yes
 mailboxes `mutt_get_mailboxes`
 alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
-subscribe "(admin(-auto)?|heroes|mirror|opensuse-[a-z-]+)@opensuse\.org|linuxteam-core@googlegroups\.com|(caasp-internal|devel|hackweek|infra-discuss|maso|opensuse-internal|openvpn-info|ops(-services)?|puppet-maintainers|research|results|salt(-maintainers)?|suse-it|(talk-)?cz|users)@suse\.(cz|de)|(freeko@lists\.vpsfree|(announce|talk)@linuxdays)\.cz|voxpupuli@groups\.io"
+subscribe "linuxteam-core@googlegroups\.com|(freeko@lists\.vpsfree|(announce|talk)@linuxdays)\.cz"
 
 ignore          *
 unignore        From: To: Cc: Bcc: Date: Subject:
@@ -41,4 +41,3 @@ source ~/.mutt/sidebar
 
 folder-hook 'gmail' 'source ~/.mutt/acc_gmail'
 folder-hook 'seznam' 'source ~/.mutt/acc_seznam'
-folder-hook 'suse' 'source ~/.mutt/acc_suse'
