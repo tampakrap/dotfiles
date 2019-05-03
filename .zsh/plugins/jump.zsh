@@ -30,7 +30,7 @@ unmark() {
 marks() {
     for link in $MARKPATH/*(@); do
         local markname="$fg[cyan]${link:t}$reset_color"
-        local markpath="$fg[blue]$(readlink $link)$reset_color"
+        local markpath="$fg[blue]$(greadlink $link)$reset_color"
         printf "%s " $markname
         printf "-> %s \t\n" $markpath
     done
@@ -38,9 +38,9 @@ marks() {
 
 _completemarks() {
     if [[ $(ls "${MARKPATH}" | wc -l) -gt 1 ]]; then
-        reply=($(ls $MARKPATH/**/*(-) | grep : | sed -E 's/(.*)\/([_\da-zA-Z\-]*):$/\2/g'))
+        reply=($(ls $MARKPATH/**/*(-) | grep : | gsed -E 's/(.*)\/([_\da-zA-Z\-]*):$/\2/g'))
     else
-        if readlink -e "${MARKPATH}"/* &>/dev/null; then
+        if greadlink -e "${MARKPATH}"/* &>/dev/null; then
             reply=($(ls "${MARKPATH}"))
         fi
     fi
