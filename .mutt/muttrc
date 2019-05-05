@@ -22,7 +22,7 @@ set pager_index_lines = 8
 #set header = yes
 #set edit_headers = yes
 mailboxes `mutt_get_mailboxes`
-alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)"
+alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)|chatzimichos@(usertechnologies\.com|u(t)?\.plus)"
 subscribe "linuxteam-core@googlegroups\.com|(freeko@lists\.vpsfree|(announce|talk)@linuxdays)\.cz"
 
 ignore          *
@@ -41,3 +41,4 @@ source ~/.mutt/sidebar
 
 folder-hook 'gmail' 'source ~/.mutt/acc_gmail'
 folder-hook 'seznam' 'source ~/.mutt/acc_seznam'
+folder-hook 'uplus' 'source ~/.mutt/acc_uplus'

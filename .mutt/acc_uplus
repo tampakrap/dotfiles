@@ -1,0 +1,9 @@
+#set folder = ~/.Mail/uplus
+set realname = "Theodoros Chatzimichos"
+set postponed = =uplus/[Gmail].Drafts
+set from = "chatzimichos@usertechnologies.com"
+set hostname = "usertechnologies.com"
+unset record
+unset signature
+
+# vim: ft=muttrc
