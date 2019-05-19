@@ -29,6 +29,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'hashivim/vim-terraform'
 Bundle 'vim-scripts/VimRepress'
 
 call vundle#end()
