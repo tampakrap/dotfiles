@@ -22,4 +22,4 @@
 .weechat/sec.conf
 .weechat/urlserver_list.txt
 .zsh/plugins/spaceship-prompt/
-.zsh/plugins/zsh-autosuggestions/
+.zsh/plugins/zsh-*
