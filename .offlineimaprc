@@ -44,23 +44,3 @@ remotepasseval = get_passeval('seznam')
 ssl = yes
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 remoteport = 993
-
-[Account uplus]
-localrepository = local_uplus
-remoterepository = remote_uplus
-autorefresh = 4
-quick = 0
-
-[Repository local_uplus]
-type = Maildir
-localfolders = ~/.Mail/uplus
-
-[Repository remote_uplus]
-type = Gmail
-remoteuser = chatzimichos@usertechnologies.com
-remotepasseval = get_passeval('uplus')
-sslcacertfile = /usr/local/etc/openssl/cert.pem
-folderfilter = lambda foldername: foldername not in [
-                   '[Gmail]/All Mail',
-                   '[Gmail]/Important',
-                   '[Gmail]/Starred',]
