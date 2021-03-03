@@ -31,7 +31,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'hashivim/vim-terraform'
-Bundle 'vim-scripts/VimRepress'
+Bundle 'yasuhiroki/circleci.vim'
 
 call vundle#end()
 
@@ -117,6 +117,10 @@ set expandtab
 autocmd FileType ruby set sts=2 sw=2 ts=2
 autocmd FileType eruby set sts=2 sw=2 ts=2
 autocmd FileType terraform set sts=2 sw=2 ts=2
+autocmd FileType html set sts=2 sw=2 ts=2
+autocmd FileType css set sts=2 sw=2 ts=2
+autocmd FileType scss set sts=2 sw=2 ts=2
+autocmd FileType javascript set sts=2 sw=2 ts=2
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
@@ -166,3 +170,6 @@ set nofoldenable
 
 " Settings for vim-signify
 let g:signify_vcs_list = [ 'git', 'hg' ]
+
+" Settings for vim-terraform
+autocmd BufRead,BufNewFile *.hcl set filetype=terraform

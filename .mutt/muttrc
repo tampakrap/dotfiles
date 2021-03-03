@@ -21,9 +21,18 @@ set pager_context = 3
 set pager_index_lines = 8
 #set header = yes
 #set edit_headers = yes
-mailboxes `mutt_get_mailboxes`
+named-mailboxes '=== gmail ===' '=gmail/INBOX'
+mailboxes `mutt_get_mailboxes gmail`
+named-mailboxes '=== seznam ===' '=seznam/INBOX'
+mailboxes `mutt_get_mailboxes seznam`
+named-mailboxes '== uplus ==' '=uplus/INBOX'
+mailboxes `mutt_get_mailboxes uplus`
 alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)|chatzimichos@(usertechnologies\.com|u(t)?\.plus)"
-subscribe "linuxteam-core@googlegroups\.com|(freeko@lists\.vpsfree|(announce|talk)@linuxdays)\.cz|all@u(sertechnologies\.com|\.plus)"
+
+subscribe linuxteam-core@googlegroups.com
+subscribe freeko@lists.vpsfree.cz
+subscribe (announce|talk)@linuxdays)\.cz
+subscribe '(all|devops|admin(\+[:alnum:]+)?|digitalocean|domains|domeny|help)@(usertechnologies\.com|u(t)?\.plus)'
 
 ignore          *
 unignore        From: To: Cc: Bcc: Date: Subject:
@@ -32,8 +41,8 @@ hdr_order       From: To: Cc: Bcc: Date: Subject:
 
 auto_view text/html
 alternative_order text/plain text/enriched text/html
-macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/html/mail.html && firefox ~/.cache/mutt/html/mail.html && rm ~/.cache/mutt/html/mail.html<enter>"
-macro pager <F10> "<pipe-message>~/bin/viewhtmlmail.py\n" "View HTML in browser"
+macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/html/mail.html && open ~/.cache/mutt/html/mail.html && rm ~/.cache/mutt/html/mail.html<enter>"
+macro pager <F10> "<pipe-message>/usr/local/bin/viewhtmlmail.py\n" "View HTML in browser"
 
 source ~/.mutt/color
 source ~/.mutt/gpg
