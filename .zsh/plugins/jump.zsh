@@ -1,1 +1,1 @@
-oh-my-zsh/plugins/jump/jump.plugin.zsh
+ohmyzsh/plugins/jump/jump.plugin.zsh
