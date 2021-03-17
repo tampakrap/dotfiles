@@ -74,6 +74,7 @@ SPACESHIP_AWS_SYMBOL="☁️  "
 SPACESHIP_KUBECONTEXT_SHOW=false
 SPACESHIP_TERRAFORM_SYMBOL="🛠 "
 SPACESHIP_JOBS_AMOUNT_THRESHOLD=0
+SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_PROMPT_ORDER=(
     #time          # Time stamps section
     user          # Username section
@@ -82,13 +83,13 @@ SPACESHIP_PROMPT_ORDER=(
     git           # Git section (git_branch + git_status)
     #hg            # Mercurial section (hg_branch  + hg_status)
     #package       # Package version
-    node          # Node.js section
+    #node          # Node.js section
     ruby          # Ruby section
     #elixir        # Elixir section
     #xcode         # Xcode section
     #swift         # Swift section
-    #golang        # Go section
-    php           # PHP section
+    golang        # Go section
+    #php           # PHP section
     #rust          # Rust section
     #haskell       # Haskell Stack section
     #julia         # Julia section
@@ -96,7 +97,7 @@ SPACESHIP_PROMPT_ORDER=(
     aws           # Amazon Web Services section
     venv          # virtualenv section
     #conda         # conda virtualenv section
-    #pyenv         # Pyenv section
+    pyenv         # Pyenv section
     #dotnet        # .NET section
     #ember         # Ember.js section
     kubecontext   # Kubectl context section
@@ -106,7 +107,7 @@ SPACESHIP_PROMPT_ORDER=(
     #vi_mode       # Vi-mode indicator
     jobs          # Background jobs indicator
     line_sep      # Line break
-    #exit_code     # Exit code section
+    exit_code     # Exit code section
     char          # Prompt character
 )
 
