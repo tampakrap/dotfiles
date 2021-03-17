@@ -173,8 +173,8 @@ if [[ $UID != 0 ]]; then
     WORKSTATIONS=(madvillain quasimoto rakim)
     KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C)
 
+    plugin_path="${HOME}/.zsh/plugins"
     for plugin in ${PLUGINS[@]}; do
-        local plugin_path="${HOME}/.zsh/plugins"
-        [ -f $plugin_path/$plugin.zsh ] && source $plugin_path/$plugin.zsh
+        [[ -f $plugin_path/$plugin.zsh ]] && source $plugin_path/$plugin.zsh
     done
 fi
