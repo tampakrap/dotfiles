@@ -9,6 +9,7 @@ export CLICOLOR=1
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export HOSTNAME=$(hostname -s)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GOPATH=${HOME}/.go
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -169,7 +170,7 @@ source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 stty discard undef
 
 if [[ $UID != 0 ]]; then
-    PLUGINS=(jump keychain)
+    PLUGINS=(jump)
     WORKSTATIONS=(madvillain quasimoto)
 
     plugin_path="${HOME}/.zsh/plugins"
@@ -177,4 +178,6 @@ if [[ $UID != 0 ]]; then
         [[ -f $plugin_path/$plugin.zsh ]] && source $plugin_path/$plugin.zsh
     done
     [[ $(hostname -s) == 'madvillain' ]] && source $plugin_path/jobandtalent.zsh
+
+    gpg-connect-agent -q /bye
 fi
