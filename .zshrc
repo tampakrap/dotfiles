@@ -170,7 +170,10 @@ source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 stty discard undef
 
 if [[ $UID != 0 ]]; then
-    PLUGINS=(jump op)
+    PLUGINS=(
+        jump
+        op
+    )
 
     plugin_path="${HOME}/.zsh/plugins"
     for plugin in ${PLUGINS[@]}; do
