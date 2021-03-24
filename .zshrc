@@ -177,7 +177,7 @@ if [[ $UID != 0 ]]; then
     for plugin in ${PLUGINS[@]}; do
         [[ -f $plugin_path/$plugin.zsh ]] && source $plugin_path/$plugin.zsh
     done
-    [[ $(hostname -s) == 'madvillain' ]] && source $plugin_path/jobandtalent.zsh
+    [[ $HOSTNAME == 'madvillain' ]] && source $plugin_path/jobandtalent.zsh
 
     gpg-connect-agent -q /bye
 fi
