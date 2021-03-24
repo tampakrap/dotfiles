@@ -171,7 +171,6 @@ stty discard undef
 if [[ $UID != 0 ]]; then
     PLUGINS=(jump keychain)
     WORKSTATIONS=(madvillain quasimoto rakim)
-    KEYS=(0x9640E4FA29485B97 0xFFF3F17EA98D80F5 0xC9DA5BE037C3164C 0x26713EE11F863BEA)
 
     plugin_path="${HOME}/.zsh/plugins"
     for plugin in ${PLUGINS[@]}; do
