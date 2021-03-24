@@ -171,7 +171,6 @@ stty discard undef
 
 if [[ $UID != 0 ]]; then
     PLUGINS=(jump op)
-    WORKSTATIONS=(madvillain quasimoto)
 
     plugin_path="${HOME}/.zsh/plugins"
     for plugin in ${PLUGINS[@]}; do
