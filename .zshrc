@@ -177,14 +177,24 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 stty discard undef
 
-if [[ $UID != 0 ]]; then
-    PLUGINS=(
-        jump
-        op
-    )
-    load_plugins ${PLUGINS[@]}
+PLUGINS_GLOBAL=(
+)
 
-    [[ $HOSTNAME == 'madvillain' ]] && source $plugin_path/jobandtalent.zsh
+PLUGINS_USER=(
+    jump
+    op
+)
+
+PLUGINS_WORK=(
+    jobandtalent
+)
+
+load_plugins ${PLUGINS_GLOBAL[@]}
+
+if [[ $UID != 0 ]]; then
+    load_plugins ${PLUGINS_USER[@]}
+
+    [[ $HOSTNAME == 'madvillain' ]] && load_plugins ${PLUGINS_WORK[@]}
 
     gpg-connect-agent -q /bye
 fi
