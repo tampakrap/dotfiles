@@ -164,8 +164,8 @@ function multiline() {
 }
 
 source $HOME/.iterm2_shell_integration.zsh
-source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 stty discard undef
 
