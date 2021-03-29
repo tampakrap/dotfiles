@@ -9,7 +9,6 @@ export CLICOLOR=1
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export HOSTNAME=$(hostname -s)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export GOPATH=${HOME}/.go
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -37,8 +36,6 @@ alias :wq="facepalm"
 alias todo="edit ~/Documents/todo"
 alias pass-uplus="PASSWORD_STORE_DIR=~/.password-store-uplus pass"
 
-eval $(hub alias -s)
-
 if type -p colortail &> /dev/null ; then alias tail="colortail" ; fi
 if type -p colormake &> /dev/null ; then alias make="colormake" ; fi
 if type -p colorgcc &> /dev/null ; then
@@ -65,56 +62,6 @@ bindkey "^[[6~" history-beginning-search-forward-end
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-SPACESHIP_USER_SHOW=always
-SPACESHIP_HOST_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_DIR_TRUNC=0
-SPACESHIP_DIR_TRUNC_REPO=false
-SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_AWS_SYMBOL="☁️  "
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_TERRAFORM_SYMBOL="🛠 "
-SPACESHIP_JOBS_AMOUNT_THRESHOLD=0
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_PROMPT_ORDER=(
-    #time          # Time stamps section
-    user          # Username section
-    host          # Hostname section
-    dir           # Current directory section
-    git           # Git section (git_branch + git_status)
-    #hg            # Mercurial section (hg_branch  + hg_status)
-    #package       # Package version
-    #node          # Node.js section
-    ruby          # Ruby section
-    #elixir        # Elixir section
-    #xcode         # Xcode section
-    #swift         # Swift section
-    golang        # Go section
-    #php           # PHP section
-    #rust          # Rust section
-    #haskell       # Haskell Stack section
-    #julia         # Julia section
-    docker        # Docker section
-    aws           # Amazon Web Services section
-    venv          # virtualenv section
-    #conda         # conda virtualenv section
-    pyenv         # Pyenv section
-    #dotnet        # .NET section
-    #ember         # Ember.js section
-    kubecontext   # Kubectl context section
-    terraform     # Terraform workspace section
-    #exec_time     # Execution time
-    #battery       # Battery level and status
-    #vi_mode       # Vi-mode indicator
-    jobs          # Background jobs indicator
-    line_sep      # Line break
-    exit_code     # Exit code section
-    char          # Prompt character
-)
-
-prompt spaceship
-
 setopt completealiases
 setopt extendedglob
 setopt prompt_subst
@@ -131,11 +78,6 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
-compctl -g '*tar *.tar.bz2 *.tbz2 *.tar.gz *.tgz *.tar.xz *.bz2 *.gz *.zip *.jar *.rar *.Z *.gem *.rpm *.7z' + -g '*(-/)' extract
-
-autoload -U tetris
-zle -N tetris
-bindkey "^X^T" tetris
 
 function cdl() {
     cd $*
@@ -148,21 +90,6 @@ function grt() {
     done
 }
 
-function multiline() {
-    if [[ $1 == 'off' ]]; then
-        switch='false'
-    elif [[ $1 == 'on' ]]; then
-        switch='true'
-    else
-        switch=$1
-    fi
-    export SPACESHIP_PROMPT_SEPARATE_LINE=$switch
-    export SPACESHIP_DOCKER_SHOW=$switch
-    export SPACESHIP_AWS_SHOW=$switch
-    #export SPACESHIP_KUBECONTEXT_SHOW=$switch
-    export SPACESHIP_TERRAFORM_SHOW=$switch
-}
-
 function load_plugins() {
     local plugin
     local plugin_path="${HOME}/.zsh/plugins"
@@ -171,16 +98,19 @@ function load_plugins() {
     done
 }
 
-source $HOME/.iterm2_shell_integration.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 stty discard undef
 
 PLUGINS_GLOBAL=(
+    autosuggestions
+    hub
+    iterm2
+    spaceship
+    syntax-highlighting
+    tetris
 )
 
 PLUGINS_USER=(
+    gpg
     jump
     op
 )
@@ -195,6 +125,4 @@ if [[ $UID != 0 ]]; then
     load_plugins ${PLUGINS_USER[@]}
 
     [[ $HOSTNAME == 'madvillain' ]] && load_plugins ${PLUGINS_WORK[@]}
-
-    gpg-connect-agent -q /bye
 fi
