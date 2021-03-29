@@ -163,6 +163,14 @@ function multiline() {
     export SPACESHIP_TERRAFORM_SHOW=$switch
 }
 
+function load_plugins() {
+    local plugin
+    local plugin_path="${HOME}/.zsh/plugins"
+    for plugin in $@; do
+        [[ -f $plugin_path/$plugin.zsh ]] && source $plugin_path/$plugin.zsh
+    done
+}
+
 source $HOME/.iterm2_shell_integration.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -174,11 +182,8 @@ if [[ $UID != 0 ]]; then
         jump
         op
     )
+    load_plugins ${PLUGINS[@]}
 
-    plugin_path="${HOME}/.zsh/plugins"
-    for plugin in ${PLUGINS[@]}; do
-        [[ -f $plugin_path/$plugin.zsh ]] && source $plugin_path/$plugin.zsh
-    done
     [[ $HOSTNAME == 'madvillain' ]] && source $plugin_path/jobandtalent.zsh
 
     gpg-connect-agent -q /bye
