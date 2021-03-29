@@ -104,7 +104,7 @@ PLUGINS_GLOBAL=(
     autosuggestions
     hub
     iterm2
-    spaceship
+    starship
     syntax-highlighting
     tetris
 )
