@@ -96,6 +96,8 @@ function load_plugins() {
     for plugin in $@; do
         if [[ -f $plugin_path/$plugin.zsh ]]; then
             source $plugin_path/$plugin.zsh
+        else
+            echo "ERROR: ZSH plugin $plugin not found"
         fi
     done
 }
