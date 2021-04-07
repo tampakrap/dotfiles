@@ -1,1 +1,1 @@
-ohmyzsh/plugins/jump/jump.plugin.zsh
+source ${HOME}/Repos/various/ohmyzsh/plugins/jump/jump.plugin.zsh
