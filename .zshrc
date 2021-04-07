@@ -94,7 +94,9 @@ function load_plugins() {
     local plugin
     local plugin_path="${HOME}/.zsh/plugins"
     for plugin in $@; do
-        [[ -f $plugin_path/$plugin.zsh ]] && source $plugin_path/$plugin.zsh
+        if [[ -f $plugin_path/$plugin.zsh ]]; then
+            source $plugin_path/$plugin.zsh
+        fi
     done
 }
 
@@ -124,5 +126,7 @@ load_plugins ${PLUGINS_GLOBAL[@]}
 if [[ $UID != 0 ]]; then
     load_plugins ${PLUGINS_USER[@]}
 
-    [[ $HOSTNAME == 'madvillain' ]] && load_plugins ${PLUGINS_WORK[@]}
+    if [[ $HOSTNAME == 'madvillain' ]]; then
+        load_plugins ${PLUGINS_WORK[@]}
+    fi
 fi
