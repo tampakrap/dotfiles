@@ -21,6 +21,9 @@ style = "bold blue"
 [line_break]
 disabled = true
 
+[status]
+disabled = false
+
 [username]
 format = "[$user]($style) at "
 show_always = true
