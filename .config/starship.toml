@@ -24,6 +24,9 @@ disabled = true
 [status]
 disabled = false
 
+[terraform]
+format = "via [$symbol$version]($style)"
+
 [username]
 format = "[$user]($style) at "
 show_always = true
