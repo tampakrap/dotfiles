@@ -117,6 +117,7 @@ PLUGINS_GLOBAL=(
 PLUGINS_USER=(
     gpg
     jump
+    kubectl
     op
 )
 
