@@ -11,7 +11,6 @@ call vundle#begin()
 Bundle 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
-Bundle 'cespare/vim-toml'
 Bundle 'gutenye/gem.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-signify'
