@@ -118,12 +118,12 @@ PLUGINS_USER=(
     greek_shell_aliases
     gpg
     jump
-    kubectl
     op
 )
 
 PLUGINS_WORK=(
     jobandtalent
+    kubectl
 )
 
 load_plugins ${PLUGINS_GLOBAL[@]}
