@@ -115,6 +115,7 @@ PLUGINS_GLOBAL=(
 )
 
 PLUGINS_USER=(
+    greek_shell_aliases
     gpg
     jump
     kubectl
