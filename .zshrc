@@ -123,6 +123,7 @@ PLUGINS_USER=(
 PLUGINS_WORK=(
     jobandtalent
     kubectl
+    terraform
 )
 
 load_plugins ${PLUGINS_GLOBAL[@]}
