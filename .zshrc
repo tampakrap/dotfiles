@@ -35,7 +35,6 @@ alias facepalm="cat ~/.zsh/facepalm"
 alias :q="facepalm"
 alias :wq="facepalm"
 alias todo="edit ~/Documents/todo"
-alias pass-uplus="PASSWORD_STORE_DIR=~/.password-store-uplus pass"
 
 if type -p colortail &> /dev/null ; then alias tail="colortail" ; fi
 if type -p colormake &> /dev/null ; then alias make="colormake" ; fi
