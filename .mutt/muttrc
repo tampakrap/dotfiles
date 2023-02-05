@@ -21,9 +21,7 @@ set pager_context = 3
 set pager_index_lines = 8
 #set header = yes
 #set edit_headers = yes
-named-mailboxes '=== gmail ===' '=gmail/INBOX'
 mailboxes `mutt_get_mailboxes gmail`
-named-mailboxes '=== seznam ===' '=seznam/INBOX'
 mailboxes `mutt_get_mailboxes seznam`
 alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|t(heodoros\.)?chatzimichos@suse\.(com|de|cz)|chatzimichos@(usertechnologies\.com|u(t)?\.plus)"
 
