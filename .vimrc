@@ -8,25 +8,25 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
-Bundle 'gutenye/gem.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mhinz/vim-signify'
-Bundle 'plytophogy/vim-virtualenv'
-Bundle 'python-mode/python-mode'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'stephpy/vim-yaml'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'farmergreg/vim-lastplace'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'hashivim/vim-terraform'
+Plugin 'gutenye/gem.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mhinz/vim-signify'
+Plugin 'plytophogy/vim-virtualenv'
+Plugin 'python-mode/python-mode'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'stephpy/vim-yaml'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'farmergreg/vim-lastplace'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 
