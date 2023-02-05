@@ -10,7 +10,7 @@ call vundle#begin()
 " required!
 Plugin 'VundleVim/Vundle.vim'
 
-" The bundles you install will be listed here
+" The plugins you install will be listed here
 Plugin 'gutenye/gem.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-signify'
