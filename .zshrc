@@ -62,7 +62,6 @@ bindkey "^[[6~" history-beginning-search-forward-end
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
-setopt completealiases
 setopt extendedglob
 setopt prompt_subst
 setopt HIST_REDUCE_BLANKS
