@@ -6,3 +6,5 @@ export CLOUDFLARE_API_TOKEN=$(get-token -t cloudflare)
 #export BUNDLE_GEM__FURY__IO=$(get-token -t gemfury)
 #export TF_VAR_production_datadog_api_key=
 #export TF_VAR_production_datadog_app_key=
+
+source ${HOME}/Repos/various/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
