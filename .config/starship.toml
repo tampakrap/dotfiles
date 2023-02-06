@@ -29,7 +29,7 @@ disabled = true
 disabled = false
 
 [terraform]
-format = "via [$symbol$version]($style)"
+format = "via [$symbol$version]($style) "
 
 [username]
 format = "[$user]($style) at "
