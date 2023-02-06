@@ -34,3 +34,6 @@ format = "via [$symbol$version]($style) "
 [username]
 format = "[$user]($style) at "
 show_always = true
+
+[gcloud]
+disabled = true
