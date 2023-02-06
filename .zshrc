@@ -12,6 +12,7 @@ export HOSTNAME=$(hostname -s)
 export GOPATH=${HOME}/.go
 export PATH="/usr/local/opt/python@3.11/libexec/bin:$PATH"
 export WORDCHARS=$(echo $WORDCHARS | tr -d "./=-")
+export SAML2AWS_REGION=$(cat ${HOME}/.aws/default_region)
 
 alias ls='ls -Gh'
 alias lsd="ls -ldG *(-/DN)"
