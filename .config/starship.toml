@@ -1,4 +1,4 @@
-format = '$all$kubernetes$jobs$status$character'
+format = '$all$kubernetes$line_break$jobs$status$character'
 
 add_newline = false
 
