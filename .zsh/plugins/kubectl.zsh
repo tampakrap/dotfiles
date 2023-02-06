@@ -7,7 +7,7 @@ compdef kubecolor=kubectl
 #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 #PS1='$(kube_ps1)'$PS1
 
-# Execute a kubecolor command against all namespaces
+# Execute a kubectl command against all namespaces
 alias kca='_kca(){ kubecolor "$@" --all-namespaces;  unset -f _kca; }; _kca'
 
 # Apply a YML file
@@ -181,3 +181,7 @@ if (( ${+_comps[kubecolor]} )); then
   compdef kjx=kubectl
   compdef ky=kubectl
 fi
+
+# kubectx / kubens
+alias ktx=kubectx
+alias kns=kubens
