@@ -1,3 +1,5 @@
+format = '$all$kubernetes$jobs$status$character'
+
 add_newline = false
 
 [aws]
@@ -26,6 +28,7 @@ style = "bold blue"
 disabled = false
 symbol = "⎈ "
 style = 'cyan'
+format = 'on [$symbol($context)(::$namespace)]($style) '
 [kubernetes.context_aliases]
 '.*jt(?P<var_cluster>[\w-]+)' = 'jt$var_cluster'
 
