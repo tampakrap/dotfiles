@@ -1,5 +1,9 @@
 add_newline = false
 
+[aws]
+style = 'yellow'
+format = 'on [$symbol($profile)(::$region)]($style) '
+
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[➜](bold red)"
