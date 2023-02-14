@@ -3,6 +3,7 @@ format = '$all$kubernetes$line_break$jobs$status$character'
 add_newline = false
 
 [aws]
+force_display = true
 style = 'yellow'
 format = 'on [$symbol($profile)(::$region) \[$duration\]]($style) '
 
