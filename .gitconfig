@@ -9,7 +9,7 @@
 [alias]
 	l = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ar) %C(bold blue)<%an>%Creset'
 	lb = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ad) %C(bold blue)%an <%ae>%Creset %n %b'
-	cb = branch
+	cb = branch --show-current
 [core]
 	excludesfile = /home/tampakrap/.gitignore_global
 [commit]
