@@ -9,3 +9,9 @@ export CLOUDFLARE_API_TOKEN=$(get-token -t cloudflare)
 #export TF_VAR_production_datadog_app_key=
 
 source ${HOME}/Repos/various/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
+
+old_saml2aws_login_wrapper() {
+    ~/Repos/tampakrap/bin/old_saml2aws_login $1
+    [[ $? == 0 ]] && source ~/.aws/old_role
+    [[ -f ~/.aws/old_role ]] && rm ~/.aws/old_role
+}
