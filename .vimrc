@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " The plugins you install will be listed here
+Plugin 'farmergreg/vim-lastplace'
+Plugin 'fatih/vim-go'
 Plugin 'gutenye/gem.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-signify'
@@ -22,7 +24,6 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
-Plugin 'farmergreg/vim-lastplace'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
