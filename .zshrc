@@ -84,9 +84,11 @@ function cdl() {
 }
 
 function grt() {
-    while [ ! -d ".git" ]; do
-        cd ..
+    UPPER_PATH=""
+    while [ ! -d "${UPPER_PATH}.git" ]; do
+        UPPER_PATH+="../"
     done
+    cd $UPPER_PATH
 }
 
 function load_plugins() {
