@@ -1,6 +1,6 @@
 export VAULT_GITHUB_API_TOKEN=$(get-token -t github-vault)
 export TF_VAR_github_api_token=$VAULT_GITHUB_API_TOKEN
-export TF_VAR_aiven_token=$(get-token -t aiven)
+export AIVEN_TOKEN=$(get-token -t aiven)
 export REMOTE_USER=admin
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export SAML2AWS_REGION=$(cat ${HOME}/.aws/default_region)
