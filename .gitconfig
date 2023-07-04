@@ -7,9 +7,13 @@
 [push]
 	default = simple
 [alias]
+	st = status
 	l = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ar) %C(bold blue)<%an>%Creset'
 	lb = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ad) %C(bold blue)%an <%ae>%Creset %n %b'
 	cb = branch --show-current
+	nb = "!f() { git switch -c $1 origin/master --no-track; }; f"
+	sw = switch
+	swm = switch master
 [core]
 	excludesfile = /home/tampakrap/.gitignore_global
 [commit]
