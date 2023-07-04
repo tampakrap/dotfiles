@@ -18,3 +18,5 @@
 	excludesfile = /home/tampakrap/.gitignore_global
 [commit]
 	gpgsign = true
+[url "https://github.com"]
+	insteadOf = git://github.com
