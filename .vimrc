@@ -137,6 +137,9 @@ set backspace=indent,eol,start
 " Settings for nerdtree
 map <F2> :NERDTreeToggle<CR>
 
+" Settings for nerdcommenter
+let g:NERDCommentEmptyLines = 1
+
 " Allow saving of files as sudo when I forget to start vim with sudo
 cmap w!! w !sudo tee > /dev/null %
 
