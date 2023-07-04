@@ -86,6 +86,7 @@ function grt() {
     UPPER_PATH=""
     while [ ! -d "${UPPER_PATH}.git" ]; do
         UPPER_PATH+="../"
+        [ `realpath $PWD/$UPPER_PATH` = "/" ] && UPPER_PATH="" && echo "WARNING: No Git repo found" && break
     done
     [ -z $UPPER_PATH ] || cd $UPPER_PATH
 }
