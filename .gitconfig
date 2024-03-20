@@ -15,8 +15,10 @@
 	sw = switch
 	swm = switch master
 [core]
-	excludesfile = /home/tampakrap/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [commit]
 	gpgsign = true
 [url "https://github.com"]
 	insteadOf = git://github.com
+[includeIf "gitdir:~/Repos/github.com/jobandtalent/"]
+	path = ~/.gitconfig_jobandtalent
