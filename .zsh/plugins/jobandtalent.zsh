@@ -11,8 +11,6 @@ export GO111MODULE=on
 export GOPRIVATE="github.com/jobandtalent"
 #export BUNDLE_GEM__FURY__IO=$(get-token -t gemfury)
 #export PATH="/usr/local/opt/python@3.11/libexec/bin:/usr/local/opt/libpq/bin:/usr/local/opt/node@16/bin:$PATH"
-export TELEPORT_PROXY=$(get-token -t teleport)
-export ARGOCD_OPTS="--client-crt $HOME/.tsh/keys/$TELEPORT_PROXY/$USERNAME-app/$TELEPORT_PROXY/argo-x509.pem --client-crt-key $HOME/.tsh/keys/$TELEPORT_PROXY/$USERNAME --grpc-web"
 
 source ${HOME}/Repos/various/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
 
@@ -27,3 +25,23 @@ old_saml2aws_login_wrapper() {
 #
 ## The next line enables shell command completion for gcloud.
 #if [ -f '/Users/tampakrap/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tampakrap/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+connect_argo() {
+    tsh login --proxy=$TELEPORT_PROXY
+    tsh apps login argo
+    argocd login --sso $ARGOCD_SERVER
+}
+
+connect_argo_glb() {
+    export TELEPORT_PROXY=$(get-token -t teleport-glb) #"connect.glb.jobandtalent.cloud"
+    export ARGOCD_SERVER=$(get-token -t argocd-glb) #"argo.connect.glb.jobandtalent.cloud"
+    export ARGOCD_OPTS="--client-crt $HOME/.tsh/keys/$TELEPORT_PROXY/$USER-app/$TELEPORT_PROXY/argo-x509.pem --client-crt-key $HOME/.tsh/keys/$TELEPORT_PROXY/$USER --grpc-web"
+    connect_argo
+}
+
+connect_argo_exp() {
+    export TELEPORT_PROXY=$(get-token -t teleport-exp) #"connect.exp.jobandtalent.cloud"
+    export ARGOCD_SERVER=$(get-token -t argocd-exp) #"argo.connect.exp.jobandtalent.cloud"
+    export ARGOCD_OPTS="--client-crt $HOME/.tsh/keys/$TELEPORT_PROXY/$USER-app/$TELEPORT_PROXY/argo-x509.pem --client-crt-key $HOME/.tsh/keys/$TELEPORT_PROXY/$USER --grpc-web"
+    connect_argo
+}
