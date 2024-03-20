@@ -15,6 +15,8 @@ alias kaf='kubecolor apply -f'
 
 # Drop into an interactive terminal on a container
 alias keti='kubecolor exec -t -i'
+# Execute a command in a container
+alias kex='kubecolor exec'
 
 # Manage configuration quickly to switch contexts between local, dev ad staging.
 alias kcuc='kubecolor config use-context'
@@ -139,6 +141,14 @@ alias kgno='kubecolor get nodes'
 alias keno='kubecolor edit node'
 alias kdno='kubecolor describe node'
 alias kdelno='kubecolor delete node'
+
+# SC management
+alias kgsc='kubecolor get sc'
+alias kdelsc='kubecolor delete sc'
+
+# PV management
+alias kgpv='kubecolor get pv'
+alias kdelpv='kubecolor delete pv'
 
 # PVC management.
 alias kgpvc='kubecolor get pvc'
