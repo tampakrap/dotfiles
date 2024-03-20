@@ -22,3 +22,5 @@
 	insteadOf = git://github.com
 [includeIf "gitdir:~/Repos/github.com/jobandtalent/"]
 	path = ~/.gitconfig_jobandtalent
+[includeIf "gitdir:~/Repos/github.com/jobandtalent-experimental/"]
+	path = ~/.gitconfig_jobandtalent
