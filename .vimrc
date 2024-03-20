@@ -172,3 +172,19 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 
 " Settings for vim-terraform
 autocmd BufRead,BufNewFile *.hcl set filetype=terraform
+
+" Settings for vim-go
+" https://jogendra.dev/using-vim-for-go-development
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_info_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+" Auto formatting and importing
+"let g:go_fmt_autosave = 1
+"let g:go_fmt_command = "goimports"
+" Autocompletion
+au filetype go inoremap <buffer> . .<C-x><C-o>
