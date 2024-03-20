@@ -1,4 +1,5 @@
 export TFENV_AUTO_INSTALL=false
+export TF_PLUGIN_CACHE_DIR=~/.cache/terraform/providers
 
 alias tf="terraform"
 alias tfdocs="terraform-docs -c ~/.terraform-docs.yml md ."
