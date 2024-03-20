@@ -6,7 +6,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export SAML2AWS_REGION=$(cat ${HOME}/.aws/default_region)
 export SAML2AWS_PROFILE_SHORT=true
 export CLOUDFLARE_API_TOKEN=$(get-token -t cloudflare)
-export GOPATH=${HOME}/.go
 export GO111MODULE=on
 export GOPRIVATE="github.com/jobandtalent"
 #export BUNDLE_GEM__FURY__IO=$(get-token -t gemfury)
