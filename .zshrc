@@ -113,6 +113,8 @@ PLUGINS_GLOBAL=(
     starship
     syntax-highlighting
     tetris
+    kubectl
+    terraform
 )
 
 PLUGINS_USER=(
@@ -124,8 +126,6 @@ PLUGINS_USER=(
 
 PLUGINS_WORK=(
     jobandtalent
-    kubectl
-    terraform
 )
 
 load_plugins ${PLUGINS_GLOBAL[@]}
