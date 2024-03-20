@@ -1,45 +1,49 @@
-alias k=kubecolor
-alias kctl=kubecolor
-alias κυβερνήτης=kubecolor
+KUBECTL=kubecolor
+
+alias k=$KUBECTL
+alias kctl=$KUBECTL
+alias κυβερνήτης=$KUBECTL
 
 compdef kubecolor=kubectl
 
 #source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 #PS1='$(kube_ps1)'$PS1
 
+alias kg='$KUBECTL get'
+
 # Execute a kubectl command against all namespaces
-alias kca='_kca(){ kubecolor "$@" --all-namespaces;  unset -f _kca; }; _kca'
+alias kca='_kca(){ $KUBECTL "$@" --all-namespaces;  unset -f _kca; }; _kca'
 
 # Apply a YML file
-alias kaf='kubecolor apply -f'
+alias kaf='$KUBECTL apply -f'
 
 # Drop into an interactive terminal on a container
-alias keti='kubecolor exec -t -i'
+alias keti='$KUBECTL exec -t -i'
 # Execute a command in a container
-alias kex='kubecolor exec'
+alias kex='$KUBECTL exec'
 
 # Manage configuration quickly to switch contexts between local, dev ad staging.
-alias kcuc='kubecolor config use-context'
-alias kcsc='kubecolor config set-context'
-alias kcdc='kubecolor config delete-context'
-alias kccc='kubecolor config current-context'
+alias kcuc='$KUBECTL config use-context'
+alias kcsc='$KUBECTL config set-context'
+alias kcdc='$KUBECTL config delete-context'
+alias kccc='$KUBECTL config current-context'
 
 # List all contexts
-alias kcgc='kubecolor config get-contexts'
+alias kcgc='$KUBECTL config get-contexts'
 
 # General aliases
-alias kdel='kubecolor delete'
-alias kdelf='kubecolor delete -f'
+alias kdel='$KUBECTL delete'
+alias kdelf='$KUBECTL delete -f'
 
 # Pod management.
-alias kgp='kubecolor get pods'
-alias kgpa='kubecolor get pods --all-namespaces'
+alias kgp='$KUBECTL get pods'
+alias kgpa='$KUBECTL get pods --all-namespaces'
 alias kgpw='kgp --watch'
 alias kgpwide='kgp -o wide'
-alias kep='kubecolor edit pods'
-alias kdp='kubecolor describe pods'
-alias kdelp='kubecolor delete pods'
-alias kgpall='kubecolor get pods --all-namespaces -o wide'
+alias kep='$KUBECTL edit pods'
+alias kdp='$KUBECTL describe pods'
+alias kdelp='$KUBECTL delete pods'
+alias kgpall='$KUBECTL get pods --all-namespaces -o wide'
 
 # get pod by label: kgpl "app=myapp" -n myns
 alias kgpl='kgp -l'
@@ -48,138 +52,141 @@ alias kgpl='kgp -l'
 alias kgpn='kgp -n'
 
 # Service management.
-alias kgs='kubecolor get svc'
-alias kgsa='kubecolor get svc --all-namespaces'
+alias kgs='$KUBECTL get svc'
+alias kgsa='$KUBECTL get svc --all-namespaces'
 alias kgsw='kgs --watch'
 alias kgswide='kgs -o wide'
-alias kes='kubecolor edit svc'
-alias kds='kubecolor describe svc'
-alias kdels='kubecolor delete svc'
+alias kes='$KUBECTL edit svc'
+alias kds='$KUBECTL describe svc'
+alias kdels='$KUBECTL delete svc'
 
 # Ingress management
-alias kgi='kubecolor get ingress'
-alias kgia='kubecolor get ingress --all-namespaces'
-alias kei='kubecolor edit ingress'
-alias kdi='kubecolor describe ingress'
-alias kdeli='kubecolor delete ingress'
+alias kgi='$KUBECTL get ingress'
+alias kgia='$KUBECTL get ingress --all-namespaces'
+alias kei='$KUBECTL edit ingress'
+alias kdi='$KUBECTL describe ingress'
+alias kdeli='$KUBECTL delete ingress'
 
 # Namespace management
-alias kgns='kubecolor get namespaces'
-alias kens='kubecolor edit namespace'
-alias kdns='kubecolor describe namespace'
-alias kdelns='kubecolor delete namespace'
-alias kcn='kubecolor config set-context --current --namespace'
+alias kgns='$KUBECTL get namespaces'
+alias kens='$KUBECTL edit namespace'
+alias kdns='$KUBECTL describe namespace'
+alias kdelns='$KUBECTL delete namespace'
+alias kcn='$KUBECTL config set-context --current --namespace'
 
 # ConfigMap management
-alias kgcm='kubecolor get configmaps'
-alias kgcma='kubecolor get configmaps --all-namespaces'
-alias kecm='kubecolor edit configmap'
-alias kdcm='kubecolor describe configmap'
-alias kdelcm='kubecolor delete configmap'
+alias kgcm='$KUBECTL get configmaps'
+alias kgcma='$KUBECTL get configmaps --all-namespaces'
+alias kecm='$KUBECTL edit configmap'
+alias kdcm='$KUBECTL describe configmap'
+alias kdelcm='$KUBECTL delete configmap'
 
 # Secret management
-alias kgsec='kubecolor get secret'
-alias kgseca='kubecolor get secret --all-namespaces'
-alias kdsec='kubecolor describe secret'
-alias kdelsec='kubecolor delete secret'
+alias kgsec='$KUBECTL get secret'
+alias kgseca='$KUBECTL get secret --all-namespaces'
+alias kdsec='$KUBECTL describe secret'
+alias kdelsec='$KUBECTL delete secret'
 
 # Deployment management.
-alias kgd='kubecolor get deployment'
-alias kgda='kubecolor get deployment --all-namespaces'
+alias kgd='$KUBECTL get deployment'
+alias kgda='$KUBECTL get deployment --all-namespaces'
 alias kgdw='kgd --watch'
 alias kgdwide='kgd -o wide'
-alias ked='kubecolor edit deployment'
-alias kdd='kubecolor describe deployment'
-alias kdeld='kubecolor delete deployment'
-alias ksd='kubecolor scale deployment'
-alias krsd='kubecolor rollout status deployment'
+alias ked='$KUBECTL edit deployment'
+alias kdd='$KUBECTL describe deployment'
+alias kdeld='$KUBECTL delete deployment'
+alias ksd='$KUBECTL scale deployment'
+alias krsd='$KUBECTL rollout status deployment'
 
 function kres(){
-  kubecolor set env $@ REFRESHED_AT=$(date +%Y%m%d%H%M%S)
+  $KUBECTL set env $@ REFRESHED_AT=$(date +%Y%m%d%H%M%S)
 }
 
 # Rollout management.
-alias kgrs='kubecolor get replicaset'
-alias kdrs='kubecolor describe replicaset'
-alias kers='kubecolor edit replicaset'
-alias krh='kubecolor rollout history'
-alias kru='kubecolor rollout undo'
+alias kgrs='$KUBECTL get replicaset'
+alias kdrs='$KUBECTL describe replicaset'
+alias kers='$KUBECTL edit replicaset'
+alias krh='$KUBECTL rollout history'
+alias kru='$KUBECTL rollout undo'
 
 # Statefulset management.
-alias kgss='kubecolor get statefulset'
-alias kgssa='kubecolor get statefulset --all-namespaces'
+alias kgss='$KUBECTL get statefulset'
+alias kgssa='$KUBECTL get statefulset --all-namespaces'
 alias kgssw='kgss --watch'
 alias kgsswide='kgss -o wide'
-alias kess='kubecolor edit statefulset'
-alias kdss='kubecolor describe statefulset'
-alias kdelss='kubecolor delete statefulset'
-alias ksss='kubecolor scale statefulset'
-alias krsss='kubecolor rollout status statefulset'
+alias kess='$KUBECTL edit statefulset'
+alias kdss='$KUBECTL describe statefulset'
+alias kdelss='$KUBECTL delete statefulset'
+alias ksss='$KUBECTL scale statefulset'
+alias krsss='$KUBECTL rollout status statefulset'
 
 # Port forwarding
-alias kpf="kubecolor port-forward"
+alias kpf="$KUBECTL port-forward"
 
 # Tools for accessing all information
-alias kga='kubecolor get all'
-alias kgaa='kubecolor get all --all-namespaces'
+alias kga='$KUBECTL get all'
+alias kgaa='$KUBECTL get all --all-namespaces'
 
 # Logs
-alias kl='kubecolor logs'
-alias kl1h='kubecolor logs --since 1h'
-alias kl1m='kubecolor logs --since 1m'
-alias kl1s='kubecolor logs --since 1s'
-alias klf='kubecolor logs -f'
-alias klf1h='kubecolor logs --since 1h -f'
-alias klf1m='kubecolor logs --since 1m -f'
-alias klf1s='kubecolor logs --since 1s -f'
+alias kl='$KUBECTL logs'
+alias kl1h='$KUBECTL logs --since 1h'
+alias kl1m='$KUBECTL logs --since 1m'
+alias kl1s='$KUBECTL logs --since 1s'
+alias klf='$KUBECTL logs -f'
+alias klf1h='$KUBECTL logs --since 1h -f'
+alias klf1m='$KUBECTL logs --since 1m -f'
+alias klf1s='$KUBECTL logs --since 1s -f'
 
 # File copy
-alias kcp='kubecolor cp'
+alias kcp='$KUBECTL cp'
 
 # Node Management
-alias kgno='kubecolor get nodes'
-alias keno='kubecolor edit node'
-alias kdno='kubecolor describe node'
-alias kdelno='kubecolor delete node'
+alias kgno='$KUBECTL get nodes'
+alias keno='$KUBECTL edit node'
+alias kdno='$KUBECTL describe node'
+alias kdelno='$KUBECTL delete node'
 
 # SC management
-alias kgsc='kubecolor get sc'
-alias kdelsc='kubecolor delete sc'
+alias kgsc='$KUBECTL get sc'
+alias kdelsc='$KUBECTL delete sc'
 
 # PV management
-alias kgpv='kubecolor get pv'
-alias kdelpv='kubecolor delete pv'
+alias kgpv='$KUBECTL get pv'
+alias kdelpv='$KUBECTL delete pv'
 
 # PVC management.
-alias kgpvc='kubecolor get pvc'
-alias kgpvca='kubecolor get pvc --all-namespaces'
+alias kgpvc='$KUBECTL get pvc'
+alias kgpvca='$KUBECTL get pvc --all-namespaces'
 alias kgpvcw='kgpvc --watch'
-alias kepvc='kubecolor edit pvc'
-alias kdpvc='kubecolor describe pvc'
-alias kdelpvc='kubecolor delete pvc'
+alias kepvc='$KUBECTL edit pvc'
+alias kdpvc='$KUBECTL describe pvc'
+alias kdelpvc='$KUBECTL delete pvc'
 
 # Service account management.
-alias kdsa="kubecolor describe sa"
-alias kdelsa="kubecolor delete sa"
+alias kdsa="$KUBECTL describe sa"
+alias kdelsa="$KUBECTL delete sa"
 
 # DaemonSet management.
-alias kgds='kubecolor get daemonset'
+alias kgds='$KUBECTL get daemonset'
 alias kgdsw='kgds --watch'
-alias keds='kubecolor edit daemonset'
-alias kdds='kubecolor describe daemonset'
-alias kdelds='kubecolor delete daemonset'
+alias keds='$KUBECTL edit daemonset'
+alias kdds='$KUBECTL describe daemonset'
+alias kdelds='$KUBECTL delete daemonset'
 
 # CronJob management.
-alias kgcj='kubecolor get cronjob'
-alias kecj='kubecolor edit cronjob'
-alias kdcj='kubecolor describe cronjob'
-alias kdelcj='kubecolor delete cronjob'
+alias kgcj='$KUBECTL get cronjob'
+alias kecj='$KUBECTL edit cronjob'
+alias kdcj='$KUBECTL describe cronjob'
+alias kdelcj='$KUBECTL delete cronjob'
 
 # Job management.
-alias kgj='kubecolor get job'
-alias kej='kubecolor edit job'
-alias kdj='kubecolor describe job'
-alias kdelj='kubecolor delete job'
+alias kgj='$KUBECTL get job'
+alias kej='$KUBECTL edit job'
+alias kdj='$KUBECTL describe job'
+alias kdelj='$KUBECTL delete job'
+
+# Custom Resource Definitions
+alias kgcrd='$KUBECTL get crd'
 
 # Only run if the user actually has kubecolor installed
 if (( ${+_comps[kubecolor]} )); then
