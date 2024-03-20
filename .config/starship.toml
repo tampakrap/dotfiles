@@ -34,7 +34,7 @@ format = 'on [$symbol($context)(::$namespace)]($style) '
 '.*jt(?P<var_cluster>[\w-]+)' = 'jt$var_cluster'
 
 [line_break]
-disabled = true
+disabled = false
 
 [status]
 disabled = false
