@@ -6,12 +6,12 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export SAML2AWS_REGION=$(cat ${HOME}/.aws/default_region)
 export SAML2AWS_PROFILE_SHORT=true
 export CLOUDFLARE_API_TOKEN=$(get-token -t cloudflare)
-export GO111MODULE=on
-export GOPRIVATE="github.com/jobandtalent"
+#export GO111MODULE=on
+#export GOPRIVATE="github.com/jobandtalent"
 #export BUNDLE_GEM__FURY__IO=$(get-token -t gemfury)
 #export PATH="/usr/local/opt/python@3.11/libexec/bin:/usr/local/opt/libpq/bin:/usr/local/opt/node@16/bin:$PATH"
 
-source ${HOME}/Repos/various/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
+source ${HOME}/Repos/github.com/marcelobartsch/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
 
 old_saml2aws_login_wrapper() {
     ~/Repos/tampakrap/bin/old_saml2aws_login $1
