@@ -99,6 +99,13 @@ function grtm() {
     git swm
 }
 
+function ghc() {
+    local ORG=${1%/*}
+    [[ -d $REPOS_GH/$ORG ]] || mkdir $REPOS_GH/$ORG
+    hub clone $1 $REPOS_GH/$1
+    cd $REPOS_GH/$1
+}
+
 function load_plugins() {
     local plugin
     local plugin_path="${HOME}/.zsh/plugins"
