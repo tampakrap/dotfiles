@@ -11,10 +11,10 @@ export CLOUDFLARE_API_TOKEN=$(get-token -t cloudflare)
 #export BUNDLE_GEM__FURY__IO=$(get-token -t gemfury)
 #export PATH="/usr/local/opt/python@3.11/libexec/bin:/usr/local/opt/libpq/bin:/usr/local/opt/node@16/bin:$PATH"
 
-source ${HOME}/Repos/github.com/marcelobartsch/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
+source $REPOS_GH/marcelobartsch/saml2aws-oh-my-zsh/saml2aws.plugin.zsh
 
 old_saml2aws_login_wrapper() {
-    ~/Repos/tampakrap/bin/old_saml2aws_login $1
+    old_saml2aws_login $1
     [[ $? == 0 ]] && source ~/.aws/old_role
     [[ -f ~/.aws/old_role ]] && rm ~/.aws/old_role
 }
