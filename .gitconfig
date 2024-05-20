@@ -24,3 +24,5 @@
 	path = ~/.gitconfig_jobandtalent
 [includeIf "gitdir:~/Repos/github.com/jobandtalent-experimental/"]
 	path = ~/.gitconfig_jobandtalent
+[init]
+	defaultBranch = main
