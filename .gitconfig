@@ -11,9 +11,9 @@
 	l = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ar) %C(bold blue)<%an>%Creset'
 	lb = log --graph --format='%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(green)(%ad) %C(bold blue)%an <%ae>%Creset %n %b'
 	cb = branch --show-current
-	nb = "!f() { git show-ref --quiet refs/heads/master && BRANCH=master || BRANCH=main; git switch -c $1 origin/$BRANCH --no-track; }; f"
+	nb = "!f() { git show-ref --quiet refs/heads/main && BRANCH=main || BRANCH=master; git switch -c $1 origin/$BRANCH --no-track; }; f"
 	sw = switch
-	swm = "!f() { git show-ref --quiet refs/heads/master && BRANCH=master || BRANCH=main; git switch $BRANCH; }; f"
+	swm = "!f() { git show-ref --quiet refs/heads/main && BRANCH=main || BRANCH=master; git switch $BRANCH; }; f"
 [core]
 	excludesfile = ~/.gitignore_global
 [commit]
