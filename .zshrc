@@ -94,6 +94,11 @@ function grt() {
     [ -z $UPPER_PATH ] || cd $UPPER_PATH
 }
 
+function grtm() {
+    grt
+    git swm
+}
+
 function load_plugins() {
     local plugin
     local plugin_path="${HOME}/.zsh/plugins"
