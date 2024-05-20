@@ -1,4 +1,4 @@
-export TFENV_AUTO_INSTALL=false
+export TFENV_AUTO_INSTALL=true
 export TF_PLUGIN_CACHE_DIR=~/.cache/terraform/providers
 
 alias tf="terraform"
