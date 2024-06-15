@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " The plugins you install will be listed here
+Plugin 'earthly/earthly.vim'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'fatih/vim-go'
 Plugin 'gutenye/gem.vim'
@@ -25,6 +26,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'hashivim/vim-terraform'
