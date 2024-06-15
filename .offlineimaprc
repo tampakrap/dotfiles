@@ -4,7 +4,7 @@ accounts = gmail
 maxsyncaccounts = 5
 ui = ttyui
 socktimeout = 50
-pythonfile = /usr/local/bin/getmailpass.py
+pythonfile = ~/Repos/github.com/tampakrap/bin/getmailpass.py
 
 [Account gmail]
 localrepository = local_gmail
