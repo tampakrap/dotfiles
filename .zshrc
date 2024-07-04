@@ -139,7 +139,7 @@ PLUGINS_USER=(
 )
 
 PLUGINS_WORK=(
-    jobandtalent
+    work
 )
 
 load_plugins ${PLUGINS_GLOBAL[@]}

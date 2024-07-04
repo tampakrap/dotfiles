@@ -21,10 +21,10 @@
 [url "https://github.com"]
 	insteadOf = git://github.com
 [includeIf "gitdir:~/Repos/jobandtalent/"]
-	path = ~/.gitconfig_jobandtalent
+	path = ~/.gitconfig_work
 [includeIf "gitdir:~/Repos/github.com/jobandtalent/"]
-	path = ~/.gitconfig_jobandtalent
+	path = ~/.gitconfig_work
 [includeIf "gitdir:~/Repos/github.com/jobandtalent-experimental/"]
-	path = ~/.gitconfig_jobandtalent
+	path = ~/.gitconfig_work
 [init]
 	defaultBranch = main
