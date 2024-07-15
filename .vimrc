@@ -6,8 +6,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
+" let Vundle manage Vundle, required!
 Plugin 'VundleVim/Vundle.vim'
 
 " The plugins you install will be listed here
@@ -15,6 +14,7 @@ Plugin 'earthly/earthly.vim'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'fatih/vim-go'
 Plugin 'gutenye/gem.vim'
+Plugin 'hashivim/vim-terraform'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'plytophogy/vim-virtualenv'
@@ -29,7 +29,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 
