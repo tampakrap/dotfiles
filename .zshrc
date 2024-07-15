@@ -122,20 +122,20 @@ stty discard undef
 
 PLUGINS_GLOBAL=(
     autosuggestions
-    hub
     iterm2
     starship
     syntax-highlighting
     tetris
-    kubectl
-    terraform
 )
 
 PLUGINS_USER=(
     greek_shell_aliases
     gpg
+    hub
     jump
+    kubectl
     op
+    terraform
 )
 
 PLUGINS_WORK=(
