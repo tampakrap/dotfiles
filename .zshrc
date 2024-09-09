@@ -147,7 +147,7 @@ load_plugins ${PLUGINS_GLOBAL[@]}
 if [[ $UID != 0 ]]; then
     load_plugins ${PLUGINS_USER[@]}
 
-    if [[ $HOSTNAME == 'madvillain' ]]; then
+    if [[ $HOSTNAME == 'prhyme' ]]; then
         load_plugins ${PLUGINS_WORK[@]}
     fi
 fi

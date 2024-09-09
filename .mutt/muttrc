@@ -23,7 +23,7 @@ set pager_index_lines = 8
 #set edit_headers = yes
 mailboxes `mutt_get_mailboxes gmail`
 mailboxes `mutt_get_mailboxes seznam`
-alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|(t(heo(doros)?\.)?)?chatzimichos@(suse\.(com|de|cz)|usertechnologies\.com|u(t)?\.plus|jobandtalent\.com)"
+alternates "tampakrap@((opensuse|gentoo(-el)?)\.org|gmail\.com|seznam\.cz|(cronos|linuxteam(\.cs)?)\.teilar\.gr)|theo(doros)?@chatzimichos\.gr|(t(heo(doros)?\.)?)?chatzimichos@(suse\.(com|de|cz)|usertechnologies\.com|u(t)?\.plus|jobandtalent\.com|elastic\.co)"
 
 subscribe linuxteam-core@googlegroups.com
 subscribe freeko@lists.vpsfree.cz
