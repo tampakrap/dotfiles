@@ -134,8 +134,11 @@ PLUGINS_USER=(
     hub
     jump
     kubectl
-    op
     terraform
+)
+
+PLUGINS_PERSONAL=(
+    op
 )
 
 PLUGINS_WORK=(
@@ -149,5 +152,7 @@ if [[ $UID != 0 ]]; then
 
     if [[ $HOSTNAME == 'prhyme' ]]; then
         load_plugins ${PLUGINS_WORK[@]}
+    else
+        load_plugins ${PLUGINS_PERSONAL[@]}
     fi
 fi
