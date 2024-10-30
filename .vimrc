@@ -16,6 +16,7 @@ Plugin 'fatih/vim-go'
 Plugin 'gutenye/gem.vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'kien/ctrlp.vim'
+Plugin 'jjo/vim-cue'
 Plugin 'mhinz/vim-signify'
 Plugin 'plytophogy/vim-virtualenv'
 Plugin 'python-mode/python-mode'
@@ -118,6 +119,9 @@ autocmd FileType html set sts=2 sw=2 ts=2
 autocmd FileType css set sts=2 sw=2 ts=2
 autocmd FileType scss set sts=2 sw=2 ts=2
 autocmd FileType javascript set sts=2 sw=2 ts=2
+
+" tabs instead of spaces for certain filetypes
+autocmd FileType cue set noexpandtab
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
