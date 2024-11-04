@@ -12,7 +12,9 @@ export HOSTNAME=$(hostname -s)
 export GOPATH=$HOME/.go
 export REPOS=$HOME/Repos
 export REPOS_GH=$REPOS/github.com
-export PATH="/usr/local/opt/python/libexec/bin:$GOPATH/bin:$REPOS_GH/tampakrap/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export BREW=$(brew --prefix)
+export PATH="$HOME/.local/bin:$BREW/opt/python/libexec/bin:$BREW/opt/go/bin:$GOPATH/bin:$REPOS_GH/tampakrap/bin:$PATH"
 export WORDCHARS=$(echo $WORDCHARS | tr -d "_-.=/")
 export FPATH="$HOME/.zsh/site-functions:$FPATH"
 

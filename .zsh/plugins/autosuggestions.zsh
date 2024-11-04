@@ -1,1 +1,1 @@
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
