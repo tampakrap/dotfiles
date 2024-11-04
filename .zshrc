@@ -125,9 +125,9 @@ stty discard undef
 
 PLUGINS_GLOBAL=(
     autosuggestions
-    iterm2
     starship
     syntax-highlighting
+    terminals
     tetris
 )
 
@@ -145,6 +145,8 @@ PLUGINS_PERSONAL=(
 )
 
 PLUGINS_WORK=(
+    direnv
+    gcloud
     work
 )
 
