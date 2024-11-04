@@ -14,6 +14,7 @@ export REPOS=$HOME/Repos
 export REPOS_GH=$REPOS/github.com
 export PATH="/usr/local/opt/python/libexec/bin:$GOPATH/bin:$REPOS_GH/tampakrap/bin:$PATH"
 export WORDCHARS=$(echo $WORDCHARS | tr -d "_-.=/")
+export FPATH="$HOME/.zsh/site-functions:$FPATH"
 
 alias ls='ls -Gh'
 alias lsd="ls -ldG *(-/DN)"
